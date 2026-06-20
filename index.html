@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="个人博客 — 技术分享与思考">
+    <meta name="theme-color" content="#030712">
+
+    <!-- Open Graph (社交分享预览) -->
+    <meta property="og:title" content="My Blog">
+    <meta property="og:description" content="一个专注于技术探索与内容创作的个人空间。">
+    <meta property="og:type" content="website">
+
+    <title>My Blog</title>
+
+    <!-- =========================================================
+         Tailwind CSS — Play CDN (开发阶段)
+         生产环境建议切换为本地构建以减小体积
+         ========================================================= -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Inter"', 'system-ui', '-apple-system', '"Segoe UI"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', '"Fira Code"', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <!-- 自定义 Tailwind 扩展样式 (内联以加速首屏) -->
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-balance {
+                text-wrap: balance;
+            }
+        }
+    </style>
+
+    <!-- =========================================================
+         GSAP — 动画引擎
+         ========================================================= -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- =========================================================
+         Font Awesome 6 — 图标库
+         ========================================================= -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+
+    <!-- =========================================================
+         Google Fonts — Inter (可选，如果不加载则回退系统字体)
+         ========================================================= -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+    <!-- =========================================================
+         自定义样式
+         ========================================================= -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="bg-gray-950 text-gray-100 font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- =============================================================
+         加载屏 — 全屏覆盖，初始化完成后淡出
+         ============================================================= -->
+    <div id="loader"
+         class="fixed inset-0 z-[100] bg-gray-950 flex flex-col items-center justify-center gap-4 transition-opacity duration-500">
+        <div class="w-10 h-10 border-2 border-cyan-400/60 border-t-cyan-400 rounded-full animate-spin"></div>
+        <span class="text-gray-500 text-xs tracking-[0.2em] uppercase">Loading</span>
+    </div>
+
+    <!-- =============================================================
+         导航栏容器 — 固定顶部，内容由 app.js 注入
+         ============================================================= -->
+    <header id="navbar-container"
+            class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    </header>
+
+    <!-- =============================================================
+         侧边栏遮罩 — 移动端点击关闭
+         ============================================================= -->
+    <div id="sidebar-backdrop"
+         class="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 lg:hidden">
+    </div>
+
+    <!-- =============================================================
+         侧边栏容器 — 桌面端固定左侧，移动端从左侧滑入
+         layout='with-sidebar' 的页面自动显示
+         ============================================================= -->
+    <aside id="sidebar-container"
+           class="fixed top-16 left-0 z-40 w-72 h-[calc(100vh-4rem)] overflow-y-auto
+                  transform -translate-x-full lg:translate-x-0
+                  transition-transform duration-300 ease-in-out
+                  bg-gray-900/95 backdrop-blur-md border-r border-gray-800
+                  [&::-webkit-scrollbar]:w-1">
+    </aside>
+
+    <!-- =============================================================
+         主内容区 — 页面切换在此处进行，附带过渡动画
+         ============================================================= -->
+    <main id="main-content"
+          class="flex-1 pt-16 transition-all duration-300">
+        <!-- 页面内容由 app.js 的路由系统动态加载 -->
+    </main>
+
+    <!-- =============================================================
+         页脚容器 — 内容由 app.js 注入
+         ============================================================= -->
+    <footer id="footer-container">
+    </footer>
+
+    <!-- =============================================================
+         JavaScript — 按依赖顺序加载
+         ============================================================= -->
+    <!-- 1. 动画工具库 -->
+    <script src="assets/js/anim.js"></script>
+    <!-- 2. 路由配置 (声明式，修改此处即可添加页面) -->
+    <script src="assets/js/routes.js"></script>
+    <!-- 3. 应用核心 (组件加载、路由、布局管理) -->
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

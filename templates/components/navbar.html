@@ -1,0 +1,60 @@
+<!-- ============================================================
+   导航栏组件 — 所有页面共享
+   链接由 app.js 根据 routes.js 动态生成
+   ============================================================ -->
+<nav id="navbar-inner" class="bg-transparent transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+
+            <!-- 左侧：Logo / 品牌名 -->
+            <div class="flex items-center gap-3">
+                <a href="#/" data-nav-link="home"
+                   class="flex items-center gap-2 text-lg font-bold text-white hover:text-cyan-400 transition-colors duration-200">
+                    <i class="fa-solid fa-code text-cyan-400 text-xl"></i>
+                    <span class="hidden sm:inline bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                        My Blog
+                    </span>
+                </a>
+            </div>
+
+            <!-- 中间：桌面端导航链接 (由 app.js 动态注入) -->
+            <div id="nav-links-desktop"
+                 class="hidden md:flex items-center gap-1">
+                <!-- 动态填充 -->
+            </div>
+
+            <!-- 右侧：工具图标 -->
+            <div class="flex items-center gap-2">
+
+                <!-- 搜索按钮 (预留) -->
+                <button id="search-btn"
+                        class="p-2 text-gray-400 hover:text-white transition-colors duration-200 rounded-lg hover:bg-white/5"
+                        title="搜索">
+                    <i class="fa-solid fa-magnifying-glass text-sm"></i>
+                </button>
+
+                <!-- 主题切换 (预留) -->
+                <button id="theme-toggle"
+                        class="p-2 text-gray-400 hover:text-white transition-colors duration-200 rounded-lg hover:bg-white/5"
+                        title="切换主题">
+                    <i class="fa-solid fa-moon text-sm"></i>
+                </button>
+
+                <!-- 移动端菜单按钮 -->
+                <button id="mobile-menu-btn"
+                        class="md:hidden p-2 text-gray-400 hover:text-white transition-colors duration-200 rounded-lg hover:bg-white/5"
+                        aria-label="打开菜单">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 移动端下拉菜单 -->
+    <div id="mobile-menu"
+         class="hidden md:hidden bg-gray-900/95 backdrop-blur-md border-t border-gray-800">
+        <div class="px-4 py-3 space-y-1" id="nav-links-mobile">
+            <!-- 动态填充 -->
+        </div>
+    </div>
+</nav>

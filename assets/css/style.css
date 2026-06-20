@@ -1,0 +1,97 @@
+/* ============================================================
+   Custom Styles — 补充 Tailwind 不适用的场景
+   ============================================================ */
+
+/* --- Scrollbar (dark theme) --- */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* --- Page Loader --- */
+#loader.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* --- Page Transition --- */
+.page-section {
+    opacity: 0;
+    transform: translateY(24px);
+}
+.page-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Navbar scroll effect --- */
+#navbar-container.scrolled {
+    /* classes applied via JS on scroll */
+}
+
+/* --- Sidebar link active state --- */
+.sidebar-link.active {
+    color: rgb(34 211 238); /* cyan-400 */
+    background: rgba(34, 211, 238, 0.1);
+}
+
+/* --- Card hover glow --- */
+.card-glow {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.card-glow:hover {
+    box-shadow: 0 0 30px rgba(34, 211, 238, 0.15);
+}
+
+/* --- Gradient text utility --- */
+.text-gradient {
+    background: linear-gradient(135deg, #22d3ee 0%, #a78bfa 60%, #f472b6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* --- Animated border (bottom bar on hover) --- */
+.hover-border::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #22d3ee, #a78bfa);
+    transition: width 0.3s ease;
+}
+.hover-border:hover::after {
+    width: 100%;
+}
+
+/* --- Shimmer loading placeholder --- */
+@keyframes shimmer {
+    0%   { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+.shimmer {
+    background: linear-gradient(90deg,
+        rgba(255,255,255,0.04) 25%,
+        rgba(255,255,255,0.08) 50%,
+        rgba(255,255,255,0.04) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+/* --- Selection color --- */
+::selection {
+    background: rgba(34, 211, 238, 0.3);
+    color: #fff;
+}
