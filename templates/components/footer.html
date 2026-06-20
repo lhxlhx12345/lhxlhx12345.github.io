@@ -1,70 +1,65 @@
 <!-- ============================================================
-   页脚组件 — 所有页面共享
+   页脚组件 v2 — 所有页面共享
    ============================================================ -->
-<footer class="border-t border-gray-800 bg-gray-900/50">
+<footer class="border-t border-white/[0.06] bg-[#0a0a0f]/80 backdrop-blur-md">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
-        <!-- 主网格 -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-
-            <!-- 第1列：关于 -->
+            <!-- 关于 -->
             <div>
                 <h4 class="text-white font-semibold mb-4 flex items-center gap-2">
-                    <i class="fa-solid fa-code text-cyan-400"></i>
+                    <i class="fa-solid fa-code text-purple-400"></i>
                     My Blog
                 </h4>
-                <p class="text-gray-400 text-sm leading-relaxed">
+                <p class="text-white/40 text-sm leading-relaxed">
                     一个专注于技术分享与思考的个人博客。
                 </p>
             </div>
 
-            <!-- 第2列：快速链接 -->
+            <!-- 快速链接 -->
             <div>
                 <h4 class="text-white font-semibold mb-4">快速链接</h4>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="#/" data-nav-link="home" class="text-gray-400 hover:text-cyan-400 transition-colors">首页</a></li>
-                    <!-- 新页面会自动通过 nav-links 逻辑添加 -->
+                    <li><a href="#/" data-nav-link="home" class="text-white/40 hover:text-purple-400 transition-colors">首页</a></li>
                 </ul>
             </div>
 
-            <!-- 第3列：资源 (预留) -->
+            <!-- 资源 -->
             <div>
                 <h4 class="text-white font-semibold mb-4">资源</h4>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors">GitHub</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors">RSS 订阅</a></li>
+                    <li><a href="#" class="text-white/40 hover:text-purple-400 transition-colors">GitHub</a></li>
+                    <li><a href="#" class="text-white/40 hover:text-purple-400 transition-colors">RSS 订阅</a></li>
                 </ul>
             </div>
 
-            <!-- 第4列：社交媒体 (预留) -->
+            <!-- 社交媒体 -->
             <div>
                 <h4 class="text-white font-semibold mb-4">关注</h4>
                 <div class="flex gap-3">
-                    <a href="#" class="w-9 h-9 flex items-center justify-center rounded-lg bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-cyan-400 transition-all duration-200" title="GitHub">
+                    <a href="#" class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 text-white/40 hover:bg-white/10 hover:text-purple-400 transition-all duration-200" title="GitHub">
                         <i class="fa-brands fa-github"></i>
                     </a>
-                    <a href="#" class="w-9 h-9 flex items-center justify-center rounded-lg bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-cyan-400 transition-all duration-200" title="Twitter">
+                    <a href="#" class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 text-white/40 hover:bg-white/10 hover:text-purple-400 transition-all duration-200" title="Twitter">
                         <i class="fa-brands fa-x-twitter"></i>
                     </a>
-                    <a href="#" class="w-9 h-9 flex items-center justify-center rounded-lg bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-cyan-400 transition-all duration-200" title="Bilibili">
+                    <a href="#" class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 text-white/40 hover:bg-white/10 hover:text-purple-400 transition-all duration-200" title="Bilibili">
                         <i class="fa-brands fa-bilibili"></i>
                     </a>
                 </div>
             </div>
         </div>
 
-        <!-- 底部：版权 -->
-        <div class="border-t border-gray-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-500">
+        <div class="border-t border-white/[0.06] pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/30">
             <p>&copy; <span id="current-year"></span> My Blog. All rights reserved.</p>
-            <p>Built with <i class="fa-solid fa-heart text-red-400 text-xs"></i> using Tailwind CSS &amp; GSAP</p>
+            <p>Built with <i class="fa-solid fa-heart text-purple-400 text-xs"></i> using Tailwind CSS &amp; GSAP</p>
         </div>
     </div>
 </footer>
 
-<!-- 自动填充年份 -->
 <script>
-    (function() {
-        var el = document.getElementById('current-year');
-        if (el) el.textContent = new Date().getFullYear();
-    })();
+(function() {
+    var el = document.getElementById('current-year');
+    if (el) el.textContent = new Date().getFullYear();
+})();
 </script>

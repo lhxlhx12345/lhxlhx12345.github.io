@@ -53,6 +53,11 @@ const App = (() => {
         // 初始路由
         await handleRoute();
 
+        // 全局一次性动画效果（不依赖页面内容）
+        Anim.initParticles();
+        Anim.mouseParallax();
+        Anim.magneticButtons();
+
         // 隐藏加载屏
         hideLoader();
 
@@ -90,7 +95,7 @@ const App = (() => {
         const linkHTML = navRoutes.map(r => `
             <a href="${r.id === 'home' ? '#/' : '#/' + r.id}"
                data-nav-link="${r.id}"
-               class="relative px-3 py-2 text-sm text-gray-300 hover:text-white transition-colors duration-200 rounded-lg hover:bg-white/5 hover-border">
+               class="relative px-3 py-2 text-sm text-white/50 hover:text-white transition-colors duration-200 rounded-lg hover:bg-white/5 hover-border">
                 <i class="${r.icon || ''} mr-1.5 text-xs opacity-60"></i>${r.title}
             </a>
         `).join('');
@@ -105,7 +110,7 @@ const App = (() => {
             mobile.innerHTML = navRoutes.map(r => `
                 <a href="${r.id === 'home' ? '#/' : '#/' + r.id}"
                    data-nav-link="${r.id}"
-                   class="block px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors duration-200">
+                   class="block px-3 py-2.5 text-sm text-white/50 hover:text-white hover:bg-white/5 rounded-lg transition-colors duration-200">
                     <i class="${r.icon || ''} mr-2 w-4 text-center"></i>${r.title}
                 </a>
             `).join('');
@@ -172,8 +177,8 @@ const App = (() => {
                 <div class="flex flex-col items-center justify-center min-h-[60vh] text-center px-4">
                     <i class="fa-solid fa-triangle-exclamation text-5xl text-yellow-400 mb-4"></i>
                     <h2 class="text-xl font-semibold mb-2">页面加载失败</h2>
-                    <p class="text-gray-400">请检查文件路径: ${route.file}</p>
-                    <a href="#/" class="mt-4 text-cyan-400 hover:underline">返回首页</a>
+                    <p class="text-white/40">请检查文件路径: ${route.file}</p>
+                    <a href="#/" class="mt-4 text-purple-400 hover:underline">返回首页</a>
                 </div>`;
         }
     }
@@ -216,11 +221,11 @@ const App = (() => {
     function highlightNav(routeId) {
         document.querySelectorAll('[data-nav-link]').forEach(link => {
             if (link.dataset.navLink === routeId) {
-                link.classList.add('text-cyan-400');
-                link.classList.remove('text-gray-300');
+                link.classList.add('text-purple-400');
+                link.classList.remove('text-white/50');
             } else {
-                link.classList.add('text-gray-300');
-                link.classList.remove('text-cyan-400');
+                link.classList.add('text-white/50');
+                link.classList.remove('text-purple-400');
             }
         });
 

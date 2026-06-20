@@ -1,88 +1,57 @@
 <!-- ============================================================
-   侧边栏组件 — 在 layout='with-sidebar' 的页面显示
-   桌面端固定左侧，移动端从左侧滑入
+   侧边栏组件 v2 — 在 layout='with-sidebar' 的页面显示
    ============================================================ -->
 <div id="sidebar-inner" class="p-6 space-y-8">
 
-    <!-- ===== 个人卡片 ===== -->
+    <!-- 个人卡片 -->
     <div class="text-center">
-        <!-- 头像占位 -->
-        <div class="w-20 h-20 mx-auto mb-3 rounded-full bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center text-2xl font-bold text-white shadow-lg shadow-cyan-500/20">
+        <div class="w-20 h-20 mx-auto mb-3 rounded-full bg-gradient-to-br from-purple-400 to-blue-500 flex items-center justify-center text-2xl font-bold text-white shadow-lg shadow-purple-500/20">
             ?
         </div>
         <h3 class="text-white font-semibold text-sm">博主名称</h3>
-        <p class="text-gray-400 text-xs mt-1 leading-relaxed">
+        <p class="text-white/40 text-xs mt-1 leading-relaxed">
             技术爱好者 | 内容创作者
         </p>
     </div>
 
-    <!-- ===== 导航分类 ===== -->
+    <!-- 导航分类 -->
     <div>
-        <h4 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 px-1">
+        <h4 class="text-xs font-semibold text-white/30 uppercase tracking-wider mb-3 px-1">
             <i class="fa-solid fa-compass mr-1.5"></i>导航
         </h4>
         <nav class="space-y-0.5">
             <a href="#/" data-sidebar-link="home"
-               class="sidebar-link flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-gray-400 hover:text-white hover:bg-white/5 transition-all duration-200 active">
+               class="sidebar-link flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-white/50 hover:text-white hover:bg-white/5 transition-all duration-200 active">
                 <i class="fa-solid fa-house w-4 text-center"></i>
                 <span>首页</span>
             </a>
-            <!--
-                示例入口 — 创建对应页面后取消注释并同步到 routes.js
-            -->
-            <!--
-            <a href="#/blog" data-sidebar-link="blog"
-               class="sidebar-link flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-gray-400 hover:text-white hover:bg-white/5 transition-all duration-200">
-                <i class="fa-solid fa-newspaper w-4 text-center"></i>
-                <span>博客</span>
-            </a>
-            <a href="#/projects" data-sidebar-link="projects"
-               class="sidebar-link flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-gray-400 hover:text-white hover:bg-white/5 transition-all duration-200">
-                <i class="fa-solid fa-diagram-project w-4 text-center"></i>
-                <span>项目</span>
-            </a>
-            -->
             <a href="#/about" data-sidebar-link="about"
-               class="sidebar-link flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-gray-400 hover:text-white hover:bg-white/5 transition-all duration-200">
+               class="sidebar-link flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-white/50 hover:text-white hover:bg-white/5 transition-all duration-200">
                 <i class="fa-solid fa-circle-info w-4 text-center"></i>
                 <span>关于</span>
             </a>
         </nav>
     </div>
 
-    <!-- ===== 标签云 (预留) ===== -->
+    <!-- 标签云 -->
     <div>
-        <h4 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 px-1">
+        <h4 class="text-xs font-semibold text-white/30 uppercase tracking-wider mb-3 px-1">
             <i class="fa-solid fa-tags mr-1.5"></i>标签
         </h4>
         <div class="flex flex-wrap gap-2">
-            <span class="px-2.5 py-1 text-xs rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
-                前端
-            </span>
-            <span class="px-2.5 py-1 text-xs rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20">
-                游戏
-            </span>
-            <span class="px-2.5 py-1 text-xs rounded-full bg-pink-500/10 text-pink-400 border border-pink-500/20">
-                设计
-            </span>
-            <span class="px-2.5 py-1 text-xs rounded-full bg-yellow-500/10 text-yellow-400 border border-yellow-500/20">
-                工具
-            </span>
+            <span class="px-2.5 py-1 text-xs rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20">前端</span>
+            <span class="px-2.5 py-1 text-xs rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">游戏</span>
+            <span class="px-2.5 py-1 text-xs rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">设计</span>
+            <span class="px-2.5 py-1 text-xs rounded-full bg-yellow-500/10 text-yellow-400 border border-yellow-500/20">工具</span>
         </div>
     </div>
 
-    <!-- ===== 页脚信息 (侧边栏底部) ===== -->
-    <div class="pt-4 border-t border-gray-800">
-        <div class="flex items-center justify-center gap-3 text-gray-500 text-sm">
-            <a href="#" class="hover:text-cyan-400 transition-colors" title="GitHub">
-                <i class="fa-brands fa-github"></i>
-            </a>
-            <a href="#" class="hover:text-cyan-400 transition-colors" title="RSS">
-                <i class="fa-solid fa-rss"></i>
-            </a>
-            <a href="#" class="hover:text-cyan-400 transition-colors" title="Email">
-                <i class="fa-solid fa-envelope"></i>
-            </a>
+    <!-- 侧边栏底部 -->
+    <div class="pt-4 border-t border-white/[0.06]">
+        <div class="flex items-center justify-center gap-3 text-white/30 text-sm">
+            <a href="#" class="hover:text-purple-400 transition-colors" title="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="#" class="hover:text-purple-400 transition-colors" title="RSS"><i class="fa-solid fa-rss"></i></a>
+            <a href="#" class="hover:text-purple-400 transition-colors" title="Email"><i class="fa-solid fa-envelope"></i></a>
         </div>
     </div>
 
