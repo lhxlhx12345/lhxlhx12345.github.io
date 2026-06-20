@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 
 // TODO: Replace with your actual domain (GitHub Pages URL or custom domain)
-const baseUrl = 'https://YOUR_DOMAIN_HERE'; // e.g., https://lhxlhx12345.github.io
+const baseUrl = 'https://lhxlhx12345.github.io'; // site domain
 
 const pagesDir = path.resolve(__dirname, '..', 'src', 'pages');
 
