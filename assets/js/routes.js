@@ -12,6 +12,7 @@ const ROUTES = [
         layout: 'default',
         nav: true,
         icon: 'fa-solid fa-house',
+        favicon: 'assets/favicons/home.svg',
         breadcrumb: []
     },
 
@@ -23,6 +24,7 @@ const ROUTES = [
         layout: 'default',
         nav: true,
         icon: 'fa-solid fa-gamepad',
+        favicon: 'assets/favicons/guides.svg',
         breadcrumb: [
             { title: '首页', href: '#/' }
         ]
@@ -36,6 +38,7 @@ const ROUTES = [
         layout: 'with-sidebar',
         nav: false,
         icon: 'fa-solid fa-train-subway',
+        favicon: 'assets/favicons/star-rail.svg',
         breadcrumb: [
             { title: '首页', href: '#/' },
             { title: '游戏攻略', href: '#/guides' }
@@ -49,6 +52,7 @@ const ROUTES = [
         file: 'pages/guides/star-rail/beginner-guide.html',
         layout: 'with-sidebar',
         nav: false,
+        favicon: 'assets/favicons/star-rail.svg',
         breadcrumb: [
             { title: '首页', href: '#/' },
             { title: '游戏攻略', href: '#/guides' },

@@ -68,6 +68,22 @@ const App = (() => {
     }
 
     // =============================================================
+    // 更新浏览器标签页图标 (Favicon)
+    // =============================================================
+    function updateFavicon(route) {
+        const link = document.getElementById('favicon');
+        if (!link) return;
+
+        // 优先使用 route 上声明的 favicon，否则回退默认
+        const faviconPath = route.favicon || 'assets/favicons/home.svg';
+
+        // 避免重复设置
+        if (link.href && link.href.includes(faviconPath)) return;
+
+        link.href = faviconPath;
+    }
+
+    // =============================================================
     // 加载 HTML 片段组件
     // =============================================================
     async function loadComponent(name, url, target) {
@@ -134,6 +150,9 @@ const App = (() => {
 
         // 更新标题
         document.title = route.title + (route.id !== 'home' ? ' | CARBlog' : '');
+
+        // 更新 Favicon
+        updateFavicon(route);
 
         // 应用布局
         applyLayout(route.layout);

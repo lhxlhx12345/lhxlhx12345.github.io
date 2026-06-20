@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- 握把左 -->
+  <rect x="2" y="14" width="5" height="10" rx="2.5" fill="#60a5fa"/>
+  <!-- 握把右 -->
+  <rect x="25" y="14" width="5" height="10" rx="2.5" fill="#60a5fa"/>
+  <!-- 主体 -->
+  <rect x="2" y="8" width="28" height="9" rx="4" fill="#818cf8"/>
+  <!-- 十字键 -->
+  <rect x="8" y="12" width="6" height="2" rx="0.5" fill="#0a0a0f"/>
+  <rect x="10" y="10" width="2" height="6" rx="0.5" fill="#0a0a0f"/>
+  <!-- 按钮 -->
+  <circle cx="21" cy="12" r="1.8" fill="#0a0a0f"/>
+  <circle cx="24" cy="12" r="1.8" fill="#0a0a0f"/>
+</svg>
