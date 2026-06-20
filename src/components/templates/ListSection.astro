@@ -1,0 +1,14 @@
+---
+/**
+ * 通用列表区块模板
+ * usage: <ListSection title="栏目标题"><Item .../></ListSection>
+ */
+export interface Props {
+  title: string;
+}
+---
+
+<div class="my-8">
+  <h2 class="text-2xl font-semibold mb-4">{title}</h2>
+  <slot />
+</div>

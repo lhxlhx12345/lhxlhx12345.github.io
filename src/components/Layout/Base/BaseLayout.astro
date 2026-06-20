@@ -1,0 +1,31 @@
+---
+import NavBar from '../Nav/NavBar.jsx';
+import Footer from '../Footer/Footer.jsx';
+import SideBar from '../SideBar/SideBar.jsx';
+---
+
+<html lang="zh-CN" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>个人博客</title>
+    <link rel="stylesheet" href="/src/styles/globals.css" />
+  </head>
+  <body class="flex flex-col min-h-screen bg-white text-gray-900">
+    <header class="bg-gray-100 border-b border-gray-200">
+      <NavBar />
+    </header>
+    <div class="flex flex-1">
+      <aside class="w-64 hidden md:block bg-gray-50 border-r border-gray-200">
+        <SideBar />
+      </aside>
+      <main class="flex-1 p-4">
+        <!-- 页面内容通过 Astro slot 注入 -->
+        <slot />
+      </main>
+    </div>
+    <footer class="bg-gray-100 border-t border-gray-200 p-4 text-center text-sm">
+      <Footer />
+    </footer>
+  </body>
+</html>

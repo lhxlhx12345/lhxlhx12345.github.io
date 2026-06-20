@@ -1,0 +1,16 @@
+---
+/**
+ * 通用详情区块模板
+ * usage: <DetailSection title="标题"><p>内容内容</p></DetailSection>
+ */
+export interface Props {
+  title: string;
+}
+---
+
+<div class="my-8">
+  <h2 class="text-2xl font-semibold mb-4">{title}</h2>
+  <div class="prose max-w-none">
+    <slot />
+  </div>
+</div>
