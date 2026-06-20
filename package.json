@@ -6,7 +6,9 @@
     "build": "astro build",
     "preview": "astro preview",
     "format": "prettier --write .",
-    "postinstall": "astro sync"
+    "postinstall": "astro sync",
+    "generate-sitemap": "node scripts/generate-sitemap.js",
+    "postbuild": "npm run generate-sitemap"
   },
   "dependencies": {
     "astro": "^4.0.0",

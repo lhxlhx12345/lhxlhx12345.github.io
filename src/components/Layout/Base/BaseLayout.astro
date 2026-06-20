@@ -1,14 +1,15 @@
 ---
-import NavBar from '../Nav/NavBar.jsx';
-import Footer from '../Footer/Footer.jsx';
-import SideBar from '../SideBar/SideBar.jsx';
+import NavBar from '../../Nav/NavBar.jsx';
+import Footer from '../../Footer/Footer.jsx';
+import SideBar from '../../SideBar/SideBar.jsx';
+import Seo from '../../Seo/Seo.astro';
 ---
 
 <html lang="zh-CN" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>个人博客</title>
+    <Seo title="个人博客" description="个人博客站点，使用 Astro、Tailwind、Framer Motion、Shadcn UI、Lucide Icons 搭建的高性能个人博客。" />
     <link rel="stylesheet" href="/src/styles/globals.css" />
   </head>
   <body class="flex flex-col min-h-screen bg-white text-gray-900">
