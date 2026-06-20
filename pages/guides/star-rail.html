@@ -14,11 +14,18 @@
     </ol>
 </nav>
 
-<!-- 游戏 Banner -->
+<!-- 游戏 Banner (动画背景) -->
 <section class="page-section relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-6">
-    <div class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-purple-600/30 via-indigo-600/20 to-blue-700/30 border border-white/[0.06] p-8 sm:p-10">
+    <div class="relative rounded-3xl overflow-hidden border border-white/[0.06] p-8 sm:p-10">
+        <!-- 星空动画背景 -->
+        <div class="absolute inset-0 bg-[#0a0520] star-field-banner"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-purple-600/40 via-blue-600/25 to-indigo-700/40"></div>
+        <!-- 浮动装饰 -->
+        <div class="absolute top-8 right-12 w-20 h-20 rounded-full bg-purple-400/20 blur-2xl orb-banner-1"></div>
+        <div class="absolute bottom-6 left-10 w-16 h-16 rounded-full bg-blue-400/15 blur-2xl orb-banner-2"></div>
+        <div class="absolute top-1/2 right-1/4 w-32 h-32 rounded-full bg-white/5 blur-3xl pulse-glow-slow"></div>
         <!-- 背景文字装饰 -->
-        <div class="absolute top-1/2 right-8 -translate-y-1/2 text-[140px] font-black text-white/[0.03] select-none pointer-events-none leading-none hidden lg:block">
+        <div class="absolute top-1/2 right-8 -translate-y-1/2 text-[140px] font-black text-white/[0.02] select-none pointer-events-none leading-none hidden lg:block">
             星穹
         </div>
 
@@ -196,6 +203,42 @@
         </div>
     </div>
 </section>
+
+<!-- ====== Banner 动画 CSS ====== -->
+<style>
+.star-field-banner {
+    background-image:
+        radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,0.5), transparent),
+        radial-gradient(1px 1px at 50% 60%, rgba(255,255,255,0.3), transparent),
+        radial-gradient(2px 2px at 70% 25%, rgba(255,255,255,0.6), transparent),
+        radial-gradient(1px 1px at 85% 75%, rgba(255,255,255,0.4), transparent),
+        radial-gradient(2px 2px at 10% 85%, rgba(255,255,255,0.5), transparent),
+        radial-gradient(1px 1px at 40% 15%, rgba(255,255,255,0.3), transparent),
+        radial-gradient(1px 1px at 60% 80%, rgba(255,255,255,0.4), transparent),
+        radial-gradient(2px 2px at 90% 45%, rgba(255,255,255,0.5), transparent);
+    background-size: 200% 200%;
+    animation: star-twinkle 4s ease-in-out infinite alternate;
+}
+@keyframes star-twinkle {
+    0%   { background-position: 0% 0%; opacity: 1; }
+    100% { background-position: 30% 30%; opacity: 0.7; }
+}
+.orb-banner-1 { animation: orb-float-1 3s ease-in-out infinite; }
+.orb-banner-2 { animation: orb-float-2 4s ease-in-out infinite 0.5s; }
+@keyframes orb-float-1 {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-10px) scale(1.15); }
+}
+@keyframes orb-float-2 {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-6px) scale(1.1); }
+}
+@keyframes pulse-glow-slow {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+    50% { transform: translate(-50%, -50%) scale(1.3); opacity: 0.8; }
+}
+.pulse-glow-slow { animation: pulse-glow-slow 4s ease-in-out infinite; }
+</style>
 
 <script>
 (function() {
