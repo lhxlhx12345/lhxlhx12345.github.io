@@ -133,7 +133,7 @@ const App = (() => {
         }
 
         // 更新标题
-        document.title = route.title + (route.id !== 'home' ? ' | My Blog' : '');
+        document.title = route.title + (route.id !== 'home' ? ' | CARBlog' : '');
 
         // 应用布局
         applyLayout(route.layout);
