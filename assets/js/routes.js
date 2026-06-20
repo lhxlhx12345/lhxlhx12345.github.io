@@ -1,53 +1,74 @@
 /* ============================================================
-   路由配置 — 声明式页面注册
-   新增栏目只需在此添加一个条目 + 创建对应的 HTML 片段
-
-   字段说明:
-     id       — 唯一标识，用于 hash 路由 (如 #/blog)
-     title    — 浏览器标题 & 导航栏显示名
-     file     — 页面内容 HTML 片段路径
-     layout   — 'default' (全宽) | 'with-sidebar' (含侧边栏)
-     nav      — 是否在导航栏显示 (默认 true)
-     icon     — Font Awesome 图标类名 (用于导航栏)
+   路由配置 v2 — 支持多级页面 (栏目→游戏→攻略)
+   新增页面只需在此添加一个条目
    ============================================================ */
 
 const ROUTES = [
+    // === 一级：栏目首页 ===
     {
         id: 'home',
         title: '首页',
         file: 'pages/home.html',
         layout: 'default',
         nav: true,
-        icon: 'fa-solid fa-house'
+        icon: 'fa-solid fa-house',
+        breadcrumb: []
+    },
+
+    // === 游戏攻略栏目 ===
+    {
+        id: 'guides',
+        title: '游戏攻略',
+        file: 'pages/guides.html',
+        layout: 'default',
+        nav: true,
+        icon: 'fa-solid fa-gamepad',
+        breadcrumb: [
+            { title: '首页', href: '#/' }
+        ]
+    },
+
+    // === 崩坏星穹铁道 (二级) ===
+    {
+        id: 'guides/star-rail',
+        title: '崩坏星穹铁道',
+        file: 'pages/guides/star-rail.html',
+        layout: 'with-sidebar',
+        nav: false,
+        icon: 'fa-solid fa-train-subway',
+        breadcrumb: [
+            { title: '首页', href: '#/' },
+            { title: '游戏攻略', href: '#/guides' }
+        ]
+    },
+
+    // === 崩坏星穹铁道 - 新手入门攻略 (三级) ===
+    {
+        id: 'guides/star-rail/beginner',
+        title: '新手入门全面指南',
+        file: 'pages/guides/star-rail/beginner-guide.html',
+        layout: 'with-sidebar',
+        nav: false,
+        breadcrumb: [
+            { title: '首页', href: '#/' },
+            { title: '游戏攻略', href: '#/guides' },
+            { title: '崩坏星穹铁道', href: '#/guides/star-rail' }
+        ]
     }
 
-    // =====================================================
-    // 示例：添加新栏目，取消注释并创建 pages/blog.html
-    // =====================================================
+    // === 扩展模板 (按此格式添加其他游戏) ===
     // {
-    //     id: 'blog',
-    //     title: '博客',
-    //     file: 'pages/blog.html',
+    //     id: 'guides/genshin',
+    //     title: '原神',
+    //     file: 'pages/guides/genshin.html',
     //     layout: 'with-sidebar',
-    //     nav: true,
-    //     icon: 'fa-solid fa-newspaper'
+    //     nav: false,
+    //     icon: 'fa-solid fa-mountain',
+    //     breadcrumb: [
+    //         { title: '首页', href: '#/' },
+    //         { title: '游戏攻略', href: '#/guides' }
+    //     ]
     // },
-    // {
-    //     id: 'projects',
-    //     title: '项目',
-    //     file: 'pages/projects.html',
-    //     layout: 'default',
-    //     nav: true,
-    //     icon: 'fa-solid fa-diagram-project'
-    // },
-    // {
-    //     id: 'about',
-    //     title: '关于',
-    //     file: 'pages/about.html',
-    //     layout: 'default',
-    //     nav: true,
-    //     icon: 'fa-solid fa-circle-info'
-    // }
 ];
 
 // --- 工具函数 ---
@@ -57,4 +78,9 @@ function getRoute(id) {
 
 function getDefaultRoute() {
     return ROUTES[0];
+}
+
+// 获取指定栏目的所有子页面
+function getChildRoutes(parentId) {
+    return ROUTES.filter(r => r.id !== parentId && r.id.startsWith(parentId + '/'));
 }
