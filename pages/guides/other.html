@@ -1,0 +1,177 @@
+<!-- ============================================================
+   其他游戏 — 游戏攻略二级页面
+   包含各子游戏入口卡片
+   ============================================================ -->
+
+<!-- 面包屑导航 -->
+<nav class="page-section max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
+    <ol class="flex flex-wrap items-center gap-2 text-sm text-white/30">
+        <li><a href="#/" class="hover:text-white transition-colors">首页</a></li>
+        <li><i class="fa-solid fa-chevron-right text-[10px]"></i></li>
+        <li><a href="#/guides" class="hover:text-white transition-colors">游戏攻略</a></li>
+        <li><i class="fa-solid fa-chevron-right text-[10px]"></i></li>
+        <li class="text-violet-400">其他游戏</li>
+    </ol>
+</nav>
+
+<!-- 栏目 Banner -->
+<section class="page-section relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-6">
+    <div class="relative rounded-3xl overflow-hidden border border-white/[0.06] p-8 sm:p-10">
+        <div class="absolute inset-0 bg-[#0d0515]"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-violet-600/20 via-purple-600/15 to-fuchsia-700/20"></div>
+        <!-- 浮动粒子 -->
+        <div class="absolute top-8 left-16 w-20 h-20 rounded-full bg-violet-400/10 blur-2xl other-glow-1"></div>
+        <div class="absolute bottom-10 right-12 w-16 h-16 rounded-full bg-fuchsia-400/10 blur-2xl other-glow-2"></div>
+        <!-- 背景文字 -->
+        <div class="absolute top-1/2 right-8 -translate-y-1/2 text-[120px] font-black text-white/[0.02] select-none pointer-events-none leading-none hidden lg:block">
+            MORE GAMES
+        </div>
+
+        <div class="relative z-10">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-500/15 border border-violet-500/25 text-xs text-violet-400 mb-4">
+                <i class="fa-solid fa-gamepad"></i>
+                多款游戏
+            </div>
+
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-3">
+                其他游戏
+                <span class="block text-lg sm:text-xl font-normal text-white/40 mt-1">MORE GAMES</span>
+            </h1>
+
+            <p class="text-white/50 text-sm sm:text-base max-w-lg leading-relaxed mb-6">
+                碧蓝航线、崩坏3、王者荣耀、英雄联盟、绝区零——更多精彩游戏的深度攻略汇总。
+            </p>
+
+            <div class="flex flex-wrap gap-6 text-sm">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-layer-group text-violet-400"></i>
+                    <span class="text-white/50">5 款游戏</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-file-lines text-violet-400"></i>
+                    <span class="text-white/50">25 篇攻略</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 子游戏卡片 -->
+<section class="page-section max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pb-20">
+    <h2 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+        <i class="fa-solid fa-compass text-violet-400"></i>选择游戏
+    </h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- 碧蓝航线 -->
+        <a href="#/guides/other/azur"
+           class="glass-card group rounded-2xl p-6 cursor-pointer">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 flex items-center justify-center rounded-lg bg-sky-500/15 text-sky-400">
+                    <i class="fa-solid fa-ship text-sm"></i>
+                </div>
+                <div>
+                    <h3 class="text-base font-semibold text-white group-hover:text-sky-400 transition-colors">碧蓝航线</h3>
+                    <p class="text-[10px] text-white/30">Azur Lane</p>
+                </div>
+            </div>
+            <p class="text-white/30 text-xs leading-relaxed mb-3">舰娘收集与弹幕海战，涵盖装备搭配、舰队编成与活动攻略。</p>
+            <div class="flex items-center justify-between">
+                <span class="text-[10px] px-2 py-0.5 rounded-full bg-sky-500/10 text-sky-400">5 篇攻略</span>
+                <i class="fa-solid fa-chevron-right text-white/20 group-hover:text-sky-400 group-hover:translate-x-1 transition-all duration-200 text-xs"></i>
+            </div>
+        </a>
+
+        <!-- 崩坏3 -->
+        <a href="#/guides/other/honkai3"
+           class="glass-card group rounded-2xl p-6 cursor-pointer">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 flex items-center justify-center rounded-lg bg-rose-500/15 text-rose-400">
+                    <i class="fa-solid fa-bolt text-sm"></i>
+                </div>
+                <div>
+                    <h3 class="text-base font-semibold text-white group-hover:text-rose-400 transition-colors">崩坏3</h3>
+                    <p class="text-[10px] text-white/30">Honkai Impact 3rd</p>
+                </div>
+            </div>
+            <p class="text-white/30 text-xs leading-relaxed mb-3">高速动作RPG，女武神培养、圣痕搭配与深渊战场攻略。</p>
+            <div class="flex items-center justify-between">
+                <span class="text-[10px] px-2 py-0.5 rounded-full bg-rose-500/10 text-rose-400">5 篇攻略</span>
+                <i class="fa-solid fa-chevron-right text-white/20 group-hover:text-rose-400 group-hover:translate-x-1 transition-all duration-200 text-xs"></i>
+            </div>
+        </a>
+
+        <!-- 王者荣耀 -->
+        <a href="#/guides/other/honor"
+           class="glass-card group rounded-2xl p-6 cursor-pointer">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 flex items-center justify-center rounded-lg bg-amber-500/15 text-amber-400">
+                    <i class="fa-solid fa-crown text-sm"></i>
+                </div>
+                <div>
+                    <h3 class="text-base font-semibold text-white group-hover:text-amber-400 transition-colors">王者荣耀</h3>
+                    <p class="text-[10px] text-white/30">Honor of Kings</p>
+                </div>
+            </div>
+            <p class="text-white/30 text-xs leading-relaxed mb-3">MOBA竞技，英雄攻略、对线技巧、团战思路与赛季上分指南。</p>
+            <div class="flex items-center justify-between">
+                <span class="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400">5 篇攻略</span>
+                <i class="fa-solid fa-chevron-right text-white/20 group-hover:text-amber-400 group-hover:translate-x-1 transition-all duration-200 text-xs"></i>
+            </div>
+        </a>
+
+        <!-- 英雄联盟 -->
+        <a href="#/guides/other/lol"
+           class="glass-card group rounded-2xl p-6 cursor-pointer">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 flex items-center justify-center rounded-lg bg-blue-500/15 text-blue-400">
+                    <i class="fa-solid fa-chess-knight text-sm"></i>
+                </div>
+                <div>
+                    <h3 class="text-base font-semibold text-white group-hover:text-blue-400 transition-colors">英雄联盟</h3>
+                    <p class="text-[10px] text-white/30">League of Legends</p>
+                </div>
+            </div>
+            <p class="text-white/30 text-xs leading-relaxed mb-3">经典MOBA，英雄攻略、对线技巧、打野路线与团战配合。</p>
+            <div class="flex items-center justify-between">
+                <span class="text-[10px] px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400">5 篇攻略</span>
+                <i class="fa-solid fa-chevron-right text-white/20 group-hover:text-blue-400 group-hover:translate-x-1 transition-all duration-200 text-xs"></i>
+            </div>
+        </a>
+
+        <!-- 绝区零 -->
+        <a href="#/guides/other/zzz"
+           class="glass-card group rounded-2xl p-6 cursor-pointer">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 flex items-center justify-center rounded-lg bg-fuchsia-500/15 text-fuchsia-400">
+                    <i class="fa-solid fa-city text-sm"></i>
+                </div>
+                <div>
+                    <h3 class="text-base font-semibold text-white group-hover:text-fuchsia-400 transition-colors">绝区零</h3>
+                    <p class="text-[10px] text-white/30">Zenless Zone Zero</p>
+                </div>
+            </div>
+            <p class="text-white/30 text-xs leading-relaxed mb-3">米哈游都市动作RPG，绳匠代理、角色培养与空洞探索攻略。</p>
+            <div class="flex items-center justify-between">
+                <span class="text-[10px] px-2 py-0.5 rounded-full bg-fuchsia-500/10 text-fuchsia-400">5 篇攻略</span>
+                <i class="fa-solid fa-chevron-right text-white/20 group-hover:text-fuchsia-400 group-hover:translate-x-1 transition-all duration-200 text-xs"></i>
+            </div>
+        </a>
+    </div>
+</section>
+
+<!-- Banner 动画 CSS -->
+<style>
+.other-glow-1 { animation: other-glow-anim 5s ease-in-out infinite; }
+.other-glow-2 { animation: other-glow-anim 4s ease-in-out infinite 1s; }
+@keyframes other-glow-anim {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.4); opacity: 1; }
+}
+</style>
+
+<script>
+(function() {
+    if (typeof gsap === 'undefined') return;
+})();
+</script>
