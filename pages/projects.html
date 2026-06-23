@@ -1,0 +1,159 @@
+<!-- ============================================================
+   项目 — 开源项目与作品展示
+   ============================================================ -->
+<!-- 面包屑 -->
+<nav class="page-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
+    <ol class="flex flex-wrap items-center gap-2 text-sm text-white/30">
+        <li><a href="#/" class="hover:text-white transition-colors">首页</a></li>
+        <li><i class="fa-solid fa-chevron-right text-[10px]"></i></li>
+        <li class="text-white/60">项目</li>
+    </ol>
+</nav>
+
+<!-- Hero -->
+<section class="page-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-10">
+    <div class="relative rounded-3xl overflow-hidden border border-white/[0.06] p-8 sm:p-12">
+        <div class="absolute inset-0 bg-[#140810]"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-pink-600/15 via-rose-600/10 to-purple-700/15"></div>
+        <div class="absolute top-8 left-12 w-20 h-20 rounded-full bg-pink-400/10 blur-3xl"></div>
+        <div class="relative z-10 max-w-2xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-xs text-pink-400 mb-4">
+                <i class="fa-solid fa-code-branch"></i> 精选作品
+            </div>
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-3">
+                项目<span class="text-gradient">展示</span>
+            </h1>
+            <p class="text-white/50 text-base sm:text-lg max-w-xl leading-relaxed">
+                个人开源项目与技术实践，涵盖 Web 应用、游戏、工具等领域。每个项目都有详细的介绍与源码链接。
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- 分类筛选 -->
+<section class="page-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-6">
+    <div class="flex flex-wrap gap-2" id="project-filters">
+        <button class="filter-btn active px-4 py-1.5 rounded-full text-sm font-medium border border-pink-500/30 bg-pink-500/15 text-pink-400" data-filter="all">全部</button>
+        <button class="filter-btn px-4 py-1.5 rounded-full text-sm font-medium border border-white/10 bg-white/5 text-white/60 hover:bg-white/10 hover:text-white transition" data-filter="web">Web</button>
+        <button class="filter-btn px-4 py-1.5 rounded-full text-sm font-medium border border-white/10 bg-white/5 text-white/60 hover:bg-white/10 hover:text-white transition" data-filter="game">游戏</button>
+        <button class="filter-btn px-4 py-1.5 rounded-full text-sm font-medium border border-white/10 bg-white/5 text-white/60 hover:bg-white/10 hover:text-white transition" data-filter="tool">工具</button>
+        <button class="filter-btn px-4 py-1.5 rounded-full text-sm font-medium border border-white/10 bg-white/5 text-white/60 hover:bg-white/10 hover:text-white transition" data-filter="ai">AI</button>
+    </div>
+</section>
+
+<!-- 项目卡片网格 -->
+<section class="page-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="project-grid">
+
+        <!-- Project 1: AI Game Dev -->
+        <a href="https://github.com/lhxlhx12345/ai-game-dev" target="_blank" rel="noopener" class="glass-card group rounded-2xl overflow-hidden cursor-pointer project-item" data-category="game">
+            <div class="h-48 bg-gradient-to-br from-emerald-500/20 to-teal-600/20 flex items-center justify-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                <i class="fa-solid fa-robot text-7xl text-emerald-400/30 group-hover:scale-110 transition-transform duration-300 relative z-10"></i>
+                <div class="absolute bottom-3 left-4 flex gap-2 z-10">
+                    <span class="px-2 py-0.5 rounded text-[10px] bg-emerald-500/15 text-emerald-400">Godot</span>
+                    <span class="px-2 py-0.5 rounded text-[10px] bg-purple-500/15 text-purple-400">AI</span>
+                </div>
+            </div>
+            <div class="p-5">
+                <div class="flex items-start justify-between mb-2">
+                    <h3 class="text-lg font-semibold text-white group-hover:text-pink-400 transition-colors">AI 自主游戏开发</h3>
+                    <div class="flex items-center gap-1 text-amber-400 text-sm"><i class="fa-solid fa-star text-xs"></i><span class="font-medium">128</span></div>
+                </div>
+                <p class="text-white/40 text-sm leading-relaxed mb-4">让 AI 从零到一完整开发游戏，无需人类介入。探索 AI 在游戏开发中的极限能力。</p>
+                <div class="flex items-center gap-3 text-xs text-white/30">
+                    <span><i class="fa-regular fa-calendar mr-1"></i>2025-06</span><span class="w-1 h-1 rounded-full bg-white/20"></span><span>MIT</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- Project 2: Dimension Puzzle -->
+        <a href="https://github.com/lhxlhx12345/godot-dimension-puzzle" target="_blank" rel="noopener" class="glass-card group rounded-2xl overflow-hidden cursor-pointer project-item" data-category="game">
+            <div class="h-48 bg-gradient-to-br from-blue-500/20 to-cyan-600/20 flex items-center justify-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                <i class="fa-solid fa-cube text-7xl text-blue-400/30 group-hover:scale-110 transition-transform duration-300 relative z-10"></i>
+                <div class="absolute bottom-3 left-4 flex gap-2 z-10">
+                    <span class="px-2 py-0.5 rounded text-[10px] bg-blue-500/15 text-blue-400">Godot</span>
+                    <span class="px-2 py-0.5 rounded text-[10px] bg-cyan-500/15 text-cyan-400">GDScript</span>
+                </div>
+            </div>
+            <div class="p-5">
+                <div class="flex items-start justify-between mb-2">
+                    <h3 class="text-lg font-semibold text-white group-hover:text-pink-400 transition-colors">维度解谜</h3>
+                    <div class="flex items-center gap-1 text-amber-400 text-sm"><i class="fa-solid fa-star text-xs"></i><span class="font-medium">86</span></div>
+                </div>
+                <p class="text-white/40 text-sm leading-relaxed mb-4">2D/3D 混合解谜游戏，利用维度切换机制解决复杂谜题。荣获 itch.io 每周精选。</p>
+                <div class="flex items-center gap-3 text-xs text-white/30">
+                    <span><i class="fa-regular fa-calendar mr-1"></i>2025-04</span><span class="w-1 h-1 rounded-full bg-white/20"></span><span>GPL-3.0</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- Project 3: CARBlog Static -->
+        <a href="https://github.com/lhxlhx12345/carblog-static" target="_blank" rel="noopener" class="glass-card group rounded-2xl overflow-hidden cursor-pointer project-item" data-categoryolulu="web">
+            <div class="h-48 bg-gradient-to-br from-yellow-500/20 to-amber-600/20 flex items-center justify-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                <i class="fa-solid fa-globe text-7xl text-yellow-400/30 group-hover:scale-110 transition-transform duration-300 relative z-10"></i>
+                <div class="absolute bottom-3 left-4 flex gap-2 z-10">
+                    <span class="px-2 py-0.5 rounded text-[10px] bg-yellow-500/15 text-yellow-400">Vanilla JS</span>
+                    <span class="px-2 py-0.5 rounded text-[10px] bg-cyan-500/15 text-cyan-400">Tailwind</span>
+                </div>
+            </div>
+            <div class="p-5">
+                <div class="flex items-start justify-between mb-2">
+                    <h3 class="text-lg font-semibold text-white group-hover:text-pink-400 transition-colors">CARBlog 静态网站</h3>
+                    <div class="flex items-center gap-1 text-amber-400 text-sm"><i class="fa-solid fa-star text-xs"></i><span class="font-medium">42</span></div>
+                </div>
+                <p class="text-white/40 text-sm leading-relaxed mb-4">本站的源代码，基于原生 JS + Tailwind CSS 构建的单页应用风格博客系统。</p>
+                <div class="flex items-center gap-3 text-xs text-white/30">
+                    <span><i class="fa-regular fa-calendar mr-1"></i>2025-01</span><span class="w-1 h-1 rounded-full bg-white/20"></span><span>MIT</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- Project 4: LLM CLI Tool -->
+        <a href="https://github.com/lhxl2345/llm-cli-tool" target="_blank" rel="noopener" class="glass-card group rounded-2xl overflow-hidden cursor-pointer project-item" data-category="ai">
+            <div class="h-48 bg-gradient-to-br from-purple-500/20 to-pink-600/20 flex items-center justify-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                <i class="fa-solid fa-terminal text-7xl text-purple-400/30 group-hover:scale-110 transition-transform duration-300 relative z-10"></i>
+                <div class="absolute bottom-3 left-4 flex gap-2 z-10">
+                    <span class="px-2 py-0.5 rounded text-[10px] bg-purple-500/15 text-purple-400">Python</span>
+                    <span class="px-2 py-0.5 rounded text-[10px] bg-pink-500/15 text-pink-400">CLI</span>
+                </div>
+            </div>
+            <div class="p-5">
+                <div class="flex items-start justify-between mb-2">
+                    <h3 class="text-lg font-semibold text-white group-hover:text-pink-400 transition-colors">LLM CLI Tool</h3>
+                    <div class="flex items-center gap-1 text-amber-400 text-sm"><i class="fa-solid fa-star text-xs"></i><span class="font-medium">35</span></div>
+                </div>
+                <p class="text-white/40 text-sm leading-relaxed mb-4">命令行 LLM 交互工具，支持多模型切换、历史记录与文件输入。</p>
+                <div class="flex items-center gap-3 text-xs text-white/30">
+                    <span><i class="fa-regular fa-calendar mr-1"></i>2024-11</span><span class="w-1 h-1 rounded-full bg-white/20"></span><span>Apache-2.0</span>
+                </div>
+            </div>
+        </a>
+    </div>
+</section>
+
+<!-- 项目筛选脚本 -->
+<script>
+(function() {
+    var buttons = document.querySelectorAll('#project-filters .filter-btn');
+    var items = document.querySelectorAll('#project-grid .project-item');
+    buttons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var filter = btn.getAttribute('data-filter');
+            buttons.forEach(function(b) {
+                b.classList.remove('bg-pink-500/15','text-pink-400','border-pink-500/30');
+                b.classList.add('bg-white/5','text-white/60','border-white/10');
+            });
+            btn.classList.remove('bg-white/5','text-white/60','border-white/10');
+            btn.classList.add('bg-pink-500/15','text-pink-400','border-pink-500/30');
+            items.forEach(function(item) {
+                var cat = item.getAttribute('data-category');
+                item.style.display = (filter === 'all' || cat === filter) ? '' : 'none';
+            });
+        });
+    });
+})();
+</script>

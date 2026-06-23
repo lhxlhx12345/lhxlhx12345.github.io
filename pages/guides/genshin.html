@@ -1,0 +1,254 @@
+<!-- ============================================================
+   原神 — 游戏攻略首页 (二级页面)
+   包含游戏介绍、攻略分类、最新攻略文章列表
+   ============================================================ -->
+
+<!-- 面包屑导航 -->
+<nav class="page-section max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
+    <ol class="flex flex-wrap items-center gap-2 text-sm text-white/30">
+        <li><a href="#/" class="hover:text-white transition-colors">首页</a></li>
+        <li><i class="fa-solid fa-chevron-right text-[10px]"></i></li>
+        <li><a href="#/guides" class="hover:text-white transition-colors">游戏攻略</a></li>
+        <li><i class="fa-solid fa-chevron-right text-[10px]"></i></li>
+        <li class="text-amber-400">原神</li>
+    </ol>
+</nav>
+
+<!-- 游戏 Banner (动画背景) -->
+<section class="page-section relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-6">
+    <div class="relative rounded-3xl overflow-hidden border border-white/[0.06] p-8 sm:p-10">
+        <!-- 暖色光晕动画背景 -->
+        <div class="absolute inset-0 bg-[#1a1005]"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-amber-600/30 via-orange-600/20 to-yellow-700/30"></div>
+        <!-- 浮动光球 -->
+        <div class="absolute top-6 right-12 w-20 h-20 rounded-full bg-amber-400/20 blur-2xl genshin-orb-1"></div>
+        <div class="absolute bottom-8 left-10 w-16 h-16 rounded-full bg-orange-400/15 blur-2xl genshin-orb-2"></div>
+        <div class="absolute top-1/2 left-1/3 w-24 h-24 rounded-full bg-yellow-300/10 blur-3xl pulse-glow-amber"></div>
+        <!-- 元素符号浮动 -->
+        <div class="absolute top-10 right-20 w-14 h-14 opacity-10 genshin-spin-slow">
+            <svg viewBox="0 0 100 100" class="w-full h-full"><circle cx="50" cy="50" r="48" fill="none" stroke="currentColor" stroke-width="2" class="text-amber-300"/><circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" stroke-width="1" class="text-amber-300"/></svg>
+        </div>
+        <div class="absolute bottom-12 left-20 w-10 h-10 opacity-8 genshin-spin-reverse">
+            <svg viewBox="0 0 100 100" class="w-full h-full"><polygon points="50,5 95,95 5,95" fill="none" stroke="currentColor" stroke-width="2" class="text-orange-300"/></svg>
+        </div>
+        <!-- 背景文字装饰 -->
+        <div class="absolute top-1/2 right-8 -translate-y-1/2 text-[140px] font-black text-white/[0.02] select-none pointer-events-none leading-none hidden lg:block">
+            提瓦特
+        </div>
+
+        <div class="relative z-10">
+            <!-- 标签 -->
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/15 border border-amber-500/25 text-xs text-amber-400 mb-4">
+                <i class="fa-solid fa-gamepad"></i>
+                HoYoverse / miHoYo
+            </div>
+
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-3">
+                原神
+                <span class="block text-lg sm:text-xl font-normal text-white/40 mt-1">GENSHIN IMPACT</span>
+            </h1>
+
+            <p class="text-white/50 text-sm sm:text-base max-w-lg leading-relaxed mb-6">
+                开放世界ARPG，踏入提瓦特大陆的奇幻旅程。在七种元素的交织中探索未知，与伙伴一同书写属于你的冒险篇章。
+            </p>
+
+            <!-- 统计 -->
+            <div class="flex flex-wrap gap-6 text-sm">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-file-lines text-amber-400"></i>
+                    <span class="text-white/50">30 篇攻略</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-clock text-amber-400"></i>
+                    <span class="text-white/50">持续更新中</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 攻略分类 -->
+<section class="page-section max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h2 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+        <i class="fa-solid fa-compass text-amber-400"></i>攻略分类
+    </h2>
+
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <!-- 新手入门 (有内容) -->
+        <a href="#/guides/genshin/beginner"
+           class="glass-card group rounded-xl p-4 text-center cursor-pointer">
+            <div class="w-10 h-10 mx-auto mb-3 flex items-center justify-center rounded-lg bg-amber-500/15 text-amber-400 group-hover:bg-amber-500/25 transition-colors">
+                <i class="fa-solid fa-person-walking text-sm"></i>
+            </div>
+            <h3 class="text-sm font-medium text-white group-hover:text-amber-400 transition-colors">新手入门</h3>
+            <p class="text-[10px] text-white/30 mt-1">快速上手</p>
+        </a>
+
+        <!-- 角色培养 (有内容) -->
+        <a href="#/guides/genshin/character-build"
+           class="glass-card group rounded-xl p-4 text-center cursor-pointer">
+            <div class="w-10 h-10 mx-auto mb-3 flex items-center justify-center rounded-lg bg-orange-500/15 text-orange-400 group-hover:bg-orange-500/25 transition-colors">
+                <i class="fa-solid fa-user-gear text-sm"></i>
+            </div>
+            <h3 class="text-sm font-medium text-white group-hover:text-orange-400 transition-colors">角色培养</h3>
+            <p class="text-[10px] text-white/30 mt-1">配装与养成</p>
+        </a>
+
+        <!-- 配队推荐 (有内容) -->
+        <a href="#/guides/genshin/team"
+           class="glass-card group rounded-xl p-4 text-center cursor-pointer">
+            <div class="w-10 h-10 mx-auto mb-3 flex items-center justify-center rounded-lg bg-yellow-500/15 text-yellow-400 group-hover:bg-yellow-500/25 transition-colors">
+                <i class="fa-solid fa-people-group text-sm"></i>
+            </div>
+            <h3 class="text-sm font-medium text-white group-hover:text-yellow-400 transition-colors">配队推荐</h3>
+            <p class="text-[10px] text-white/30 mt-1">阵容搭配</p>
+        </a>
+
+        <!-- 探索攻略 (有内容) -->
+        <a href="#/guides/genshin/exploration"
+           class="glass-card group rounded-xl p-4 text-center cursor-pointer">
+            <div class="w-10 h-10 mx-auto mb-3 flex items-center justify-center rounded-lg bg-emerald-500/15 text-emerald-400 group-hover:bg-emerald-500/25 transition-colors">
+                <i class="fa-solid fa-map-location-dot text-sm"></i>
+            </div>
+            <h3 class="text-sm font-medium text-white group-hover:text-emerald-400 transition-colors">探索攻略</h3>
+            <p class="text-[10px] text-white/30 mt-1">地图与收集</p>
+        </a>
+
+        <!-- 版本更新 (有内容) -->
+        <a href="#/guides/genshin/version"
+           class="glass-card group rounded-xl p-4 text-center cursor-pointer">
+            <div class="w-10 h-10 mx-auto mb-3 flex items-center justify-center rounded-lg bg-sky-500/15 text-sky-400 group-hover:bg-sky-500/25 transition-colors">
+                <i class="fa-solid fa-rocket text-sm"></i>
+            </div>
+            <h3 class="text-sm font-medium text-white group-hover:text-sky-400 transition-colors">版本更新</h3>
+            <p class="text-[10px] text-white/30 mt-1">新内容介绍</p>
+        </a>
+    </div>
+</section>
+
+<!-- 最新攻略文章列表 -->
+<section class="page-section max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pb-20">
+    <h2 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+        <i class="fa-solid fa-clock-rotate-left text-amber-400"></i>最新攻略
+    </h2>
+
+    <div class="space-y-4">
+        <!-- 文章 #1: 新手入门全面指南 -->
+        <a href="#/guides/genshin/beginner/newbie-guide"
+           class="glass-card group flex flex-col sm:flex-row gap-4 sm:items-center rounded-2xl p-5 cursor-pointer">
+            <div class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-amber-500/15 text-amber-400 font-bold text-sm">
+                01
+            </div>
+            <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-2 mb-1">
+                    <span class="px-2 py-0.5 text-[10px] rounded-full bg-amber-500/15 text-amber-400">新手入门</span>
+                </div>
+                <h3 class="text-base sm:text-lg font-semibold text-white group-hover:text-amber-400 transition-colors truncate">
+                    原神新手入门全面指南
+                </h3>
+                <p class="text-white/30 text-sm mt-1 line-clamp-2">
+                    从零开始了解元素反应、角色获取、资源管理，帮助旅行者快速踏上提瓦特冒险之旅。
+                </p>
+            </div>
+            <i class="fa-solid fa-chevron-right text-white/20 group-hover:text-amber-400 group-hover:translate-x-1 transition-all duration-200"></i>
+        </a>
+
+        <!-- 文章 #2: 元素反应详解 -->
+        <a href="#/guides/genshin/beginner/elemental-reaction"
+           class="glass-card group flex flex-col sm:flex-row gap-4 sm:items-center rounded-2xl p-5 cursor-pointer">
+            <div class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-amber-500/15 text-amber-400 font-bold text-sm">
+                02
+            </div>
+            <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-2 mb-1">
+                    <span class="px-2 py-0.5 text-[10px] rounded-full bg-amber-500/15 text-amber-400">新手入门</span>
+                </div>
+                <h3 class="text-base sm:text-lg font-semibold text-white group-hover:text-amber-400 transition-colors truncate">
+                    元素反应机制详解
+                </h3>
+                <p class="text-white/30 text-sm mt-1 line-clamp-2">
+                    深入理解七种元素的交互机制，掌握蒸发、融化、超导等核心反应的倍数与触发条件。
+                </p>
+            </div>
+            <i class="fa-solid fa-chevron-right text-white/20 group-hover:text-amber-400 group-hover:translate-x-1 transition-all duration-200"></i>
+        </a>
+
+        <!-- 文章 #3: 角色培养指南 -->
+        <a href="#/guides/genshin/character-build/artifact-guide"
+           class="glass-card group flex flex-col sm:flex-row gap-4 sm:items-center rounded-2xl p-5 cursor-pointer">
+            <div class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-orange-500/15 text-orange-400 font-bold text-sm">
+                03
+            </div>
+            <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-2 mb-1">
+                    <span class="px-2 py-0.5 text-[10px] rounded-full bg-orange-500/15 text-orange-400">角色培养</span>
+                </div>
+                <h3 class="text-base sm:text-lg font-semibold text-white group-hover:text-orange-400 transition-colors truncate">
+                    圣遗物搭配与刷取指南
+                </h3>
+                <p class="text-white/30 text-sm mt-1 line-clamp-2">
+                    各类型圣遗物套装效果解析，主词条与副词条优先级，高效刷取路线推荐。
+                </p>
+            </div>
+            <i class="fa-solid fa-chevron-right text-white/20 group-hover:text-orange-400 group-hover:translate-x-1 transition-all duration-200"></i>
+        </a>
+
+        <!-- 文章 #4: 配队推荐 -->
+        <a href="#/guides/genshin/team/hyperbloom-team"
+           class="glass-card group flex flex-col sm:flex-row gap-4 sm:items-center rounded-2xl p-5 cursor-pointer">
+            <div class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-yellow-500/15 text-yellow-400 font-bold text-sm">
+                04
+            </div>
+            <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-2 mb-1">
+                    <span class="px-2 py-0.5 text-[10px] rounded-full bg-yellow-500/15 text-yellow-400">配队推荐</span>
+                </div>
+                <h3 class="text-base sm:text-lg font-semibold text-white group-hover:text-yellow-400 transition-colors truncate">
+                    超绽放队搭配思路与操作指南
+                </h3>
+                <p class="text-white/30 text-sm mt-1 line-clamp-2">
+                    超绽放反应机制详解，草种子生成与前台触发手法，适用角色与替代方案。
+                </p>
+            </div>
+            <i class="fa-solid fa-chevron-right text-white/20 group-hover:text-yellow-400 group-hover:translate-x-1 transition-all duration-200"></i>
+        </a>
+
+        <!-- 查看更多 -->
+        <a href="#/guides/genshin/beginner"
+           class="block text-center text-sm text-white/30 hover:text-amber-400 transition-colors pt-4">
+            查看全部 30 篇攻略 <i class="fa-solid fa-arrow-right ml-1"></i>
+        </a>
+    </div>
+</section>
+
+<!-- ====== Banner 动画 CSS ====== -->
+<style>
+.genshin-orb-1 { animation: genshin-float-1 4s ease-in-out infinite; }
+.genshin-orb-2 { animation: genshin-float-2 5s ease-in-out infinite 0.5s; }
+@keyframes genshin-float-1 {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-14px) scale(1.2); }
+}
+@keyframes genshin-float-2 {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-8px) scale(1.15); }
+}
+.pulse-glow-amber { animation: pulse-glow-amber 4s ease-in-out infinite; }
+@keyframes pulse-glow-amber {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+    50% { transform: translate(-50%, -50%) scale(1.3); opacity: 0.8; }
+}
+.genshin-spin-slow { animation: genshin-spin 20s linear infinite; }
+.genshin-spin-reverse { animation: genshin-spin 15s linear infinite reverse; }
+@keyframes genshin-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+</style>
+
+<script>
+(function() {
+    if (typeof gsap === 'undefined') return;
+    // 入场动画由 app.js 统一驱动 (pageEnter + scrollReveal)
+})();
+</script>

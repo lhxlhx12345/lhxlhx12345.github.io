@@ -1,0 +1,173 @@
+<!-- ============================================================
+   资源 — 开发工具与学习资源库
+   ============================================================ -->
+<!-- 面包屑 -->
+<nav class="page-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
+    <ol class="flex flex-wrap items-center gap-2 text-sm text-white/30">
+        <li><a href="#/" class="hover:text-white transition-colors">首页</a></li>
+        <li><i class="fa-solid fa-chevron-right text-[10px]"></i></li>
+        <li class="text-white/60">资源</li>
+    </ol>
+</nav>
+
+<!-- Hero -->
+<section class="page-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-10">
+    <div class="relative rounded-3xl overflow-hidden border border-white/[0.06] p-8 sm:p-12">
+        <div class="absolute inset-0 bg-[#081摄氏度]"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-emerald-600/15 via-teal-600/10 to-职员700/15"></div>
+        <div class="absolute top-8 right-12 w-20 h-20 rounded-full bg-emerald-400/10 blur-3xl"></div>
+        <div class="relative z-10 max-w-2xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs text-emerald-400 mb-4">
+                <i class="fa-solid fa-toolbox"></i> 精选合集
+            </div>
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-3">
+                资源<span class="text-gradient">资料库</span>
+            </h1>
+            <p class="text-white/50 text-base sm:text-lg max-w-xl leading-relaxed">
+                收集整理开发常用的工具，文档、模板与书籍。分类管理，随取随用。
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- 分类标签 -->
+<section class="page-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-6">
+    <div class="flex flex-wrap gap-2" id="resource-filters">
+        <button class="filter-btn active px-4 py-1.5 rounded-full text-sm font-medium border border-emerald-500/30 bg-emerald-500/15 text-emerald-400" data-filter="all">全部</button>
+        <button class="filter-btn px-4 py-1.5 rounded-full text-sm font-medium border border-white/10 bg-white/5 text-white/60 hover:bg-white/10 hover:text-white transition" data-filter="tool">工具</button>
+        <button class="filter-btn px-4 py-1.5 rounded-full text-sm font-medium border border-white/10 bg-white/5 text-white/60 hover:bg-white/10 hover:text-white transition" data-filter="doc">文档</button>
+        <button class="filter-btn px-4 py-1.5 rounded-full text-sm font-medium border border-white/10 bg-white/5 text-white/60 hover:bg-white/10 hover:text-white transition" data-filter="template">模板</button>
+        <button class="filter-btn px-4 py-1.5 rounded-full text-sm font-medium border border-white/10 bg-white/5 text-white/60 hover:bg-white/10 hover:text-white transition" data-filter="book">书籍</button>
+    </div>
+</section>
+
+<!-- 资源卡片网格 -->
+<section class="page-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="resource-grid">
+
+        <!-- Resource 1: MDN -->
+        <a href="https://developer.mozilla.org" target="_blank" rel="noopener" class="glass-card group rounded-2xl p-5 cursor-pointer resource-item" data-category="doc">
+            <div class="flex items-start gap-4">
+                <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-xl bg-orange-500/10 text-orange-400">
+                    <i class="fa-brands fa-firefox-browser text-xl"></i>
+                </div>
+                <div class="min-w-0 flex-1">
+                    <div class="flex items-center gap-2 mb-1">
+                        <h3 class="text-base font-semibold text-white group-hover:text-emerald-400 transition-colors truncate">MDN Web Docs</h3>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-white/20"></i>
+                    </div>
+                    <p class="text-white/40 text-sm leading-relaxed mb-3">Web 技术权威文档，HTML、CSS、JavaScript 的必查手册。</p>
+                    <span class="inline-flex items-center gap-1.5 text-xs text-white/30"><i class="fa-solid fa-book-open"></i> 文档</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- Resource 2: Godot -->
+        <a href="https://godotengine.org" target="_blank" rel="noopener" class="glass-card group rounded-2xl p-5 cursor-pointer resource-item" data-category="tool">
+            <div class="flex items-start gap-4">
+                <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-xl bg-indigo-500/10 text-indigo-400">
+                    <i class="fa-solid fa-gamepad text-xl"></i>
+                </div>
+                <div class="min-w-0 flex-1 Ta1">
+                    <div class="flex items-center gap-2 mb-1">
+                        <h3 class="text-base font-semibold text-white group-hover:text-emerald-400 transition-colors truncate">Godot Engine</h3>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-white/20"></i>
+                    </div>
+                    <p class="text-white/40 text-sm leading-relaxed mb-3">免费开源的游戏引擎，2D/3D 游戏开发的首选工具。</p>
+                    <span class="inline-flex items-center gap-1.5 text-xs text-white/30"><i class="fa-solid fa-wrench"></i> 工具</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- Resource 3: Tailwind -->
+        <a href="https://tailwindcss.com" target="_blank" rel="noopener" class="glass-card group rounded-2xl p-5 cursor-pointer resource-item" data-category="doc">
+            <div class="flex items-start gap-4">
+                <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-xl bg-cyan-500/10 text-cyan-400">
+                    <i class="fa-solid fa-wind text-xl"></i>
+                </div>
+                <div class="min-w-0 flex-1">
+                    <div class="flex items-center gap-2 mb-1">
+                        <h3 class="text-base font-semibold text-white group-hover:text-emerald-400 transition-colors truncate">Tailwind CSS</h3>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-white/20"></i>
+                    </div>
+                    <p class="text-white/40 text-sm leading-relaxed mb-3">实用优先的 CSS 框架，快速构建现代界面。</p>
+                    <span class="inline-flex items-center gap-1.5 text-xs text-white/30"><i class="fa-solid fa-book-open"></i> 文档</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- Resource 4: Awesome Selfhosted -->
+        <a href="https://github.com/awesome-selfhosted/awesome-selfhosted" target="_blank" rel="noopener" class="glass-card group rounded-2xl p-5 cursor-pointer resource-item" data-category="template">
+            <div class="flex items-start gap-4">
+                <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-xl bg-purple-500/10 text-purple-400">
+                    <i class="fa-brands fa-github text-xl"></i>
+                </div>
+                <div class="min-w-0 flex-1">
+                    <div class="flex items-center gap-2 mb-1">
+                        <h3 class="text-base font-semibold text-white group-hover:text-emerald-400 transition-colors truncate">Awesome Selfhosted</h3>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-white/20"></i>
+                    </div>
+                    <p class="text-white/40 text-sm leading-relaxed mb-3">海量自托管服务清单，从博客到网盘应有尽有。</p>
+                    <span class="inline-flex items-center gap-1.5 text-xs text-white/30"><i class="fa-solid fa-layer-group"></i> 模板</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- Resource 5: Roadmap.sh -->
+        <a href="https://roadmap.sh" target="_blank" rel="noopener" class="glass-card group rounded-2xl p-5 cursor-pointer resource-item" data-category="doc">
+            <div class="flex items-start gap-4">
+                <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-xl bg-amber-500/10 text-amber-400">
+                    <i class="fa-solid fa-map text-xl"></i>
+                </div>
+                <div class="min-w-0 flex-1">
+                    <div class="flex items-center gap-2 mb-1">
+                        <h3 class="text-base font-semibold text-white group-hover:text-emerald-400 transition-colors truncate">Developer Roadmaps</h3>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-white/20"></i>
+                    </div>
+                    <p class="text-white/40 text-sm leading-relaxed mb-3">交互式技能路线图，前端、后端、AI 等方向一目了然。</p>
+                    <span class="inline-flex items-center gap-1.5 text-xs text-white/30"><i class="fa-solid fa-book-open"></i> 文档</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- Resource 6: FreeCodeCamp -->
+        <a href="https://www.freecodecamp.org" target="_blank" rel="noopener" class="glass-card group rounded-2xl p-5 cursor-pointer resource-item" data-category="book">
+            <div class="flex items-start gap-4">
+                <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-xl bg-blue-500/10 text-blue-400">
+                    <i class="fa-solid fa-graduation-cap text-xl"></i>
+                </div>
+                <div class="min-w-0 flex-1">
+                    <div class="flex items-center gap-2 mb-1">
+                        <h3 class="text-base font-semibold text-white group-hover:text-emerald-400 transition-colors truncate">freeCodeCamp</h3>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-white/20"></i>
+                    </div>
+                    <p class="text-white/40 text-sm leading-relaxed mb-3">免费的编程学习平台，涵盖前端、后端、数据科学。</p>
+                    <span class="inline-flex items-center gap-1.5 text-xs text-white/30"><i class="fa-solid fa-book-open"></i> 书籍</span>
+                </div>
+            </div>
+        </a>
+    </div>
+</section>
+
+<!-- 资源筛选脚本 -->
+<script>
+(function() {
+    var buttons = document.querySelectorAll('#resource-filters .filter-btn');
+    var items = document.querySelectorAll('#resource-grid .resource-item');
+    buttons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var filter = btn.getAttribute('data-filter');
+            buttons.forEach(function(b) {
+                b.classList.remove('bg-emerald-500/15','text-emerald-400','border-emerald-500/30');
+                b.classList.add('bg-white/5','text-white/60','border-white/10');
+            });
+            btn.classList.remove('bg-white/5','text-white/60','border-white/10');
+            btn.classList.add('bg-emerald-500/15','text-emerald-400','border-emerald-500/30');
+            items.forEach(function(item) {
+                var cat = item.getAttribute('data-category');
+                item.style.display = (filter === 'all' || cat === filter) ? '' : 'none';
+            });
+        });
+    });
+})();
+</script>

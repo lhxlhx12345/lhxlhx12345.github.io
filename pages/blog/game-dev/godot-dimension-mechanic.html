@@ -1,0 +1,167 @@
+<!-- ============================================================
+   CARBlog — 博客文章详情
+   Godot 4.x 实现3D维度切换机制
+   ============================================================ -->
+
+<nav class="page-section max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
+    <ol class="flex flex-wrap items-center gap-2 text-sm text-white/30">
+        <li><a href="#/" class="hover:text-white transition-colors">首页</a></li>
+        <li><i class="fa-solid fa-chevron-right text-[10px]"></i></li>
+        <li><a href="#/blog" class="hover:text-white transition-colors">博客</a></li>
+        <li><i class="fa-solid fa-chevron-right text-[10px]"></i></li>
+        <li class="text-emerald-400">游戏开发</li>
+    </ol>
+</nav>
+
+<section class="page-section max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-8">
+    <div class="glass-card rounded-2xl p-8 sm:p-10">
+        <div class="flex flex-wrap items-center gap-2 mb-4">
+            <span class="px-2.5 py-1 rounded-full bg-emerald-500/15 text-emerald-400 text-xs font-medium border border-emerald-500/20">游戏开发</span>
+            <span class="px-2.5 py-1 rounded-full bg-teal-500/15 text-teal-400 text-xs font-medium border border-teal-500/20">Godot</span>
+        </div>
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white mb-4 leading-tight">
+            Godot 4.x 实现3D维度切换机制：原理与实战
+        </h1>
+        <p class="text-white/50 text-base leading-relaxed mb-6">
+            记录使用Godot 4.x开发3D维度切换机制的全过程，包括视角控制、碰撞检测、动画状态机的实现细节。
+        </p>
+        <div class="flex flex-wrap items-center gap-6 text-sm text-white/30 pb-6 border-b border-white/[0.06]">
+            <span><i class="fa-regular fa-calendar mr-1.5"></i>2026-06-15</span>
+            <span><i class="fa-regular fa-clock mr-1.5"></i>18 分钟阅读</span>
+            <span><i class="fa-regular fa-folder mr-1.5"></i>游戏开发</span>
+        </div>
+        <div class="flex items-center gap-3 pt-6">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center text-white font-bold text-sm">C</div>
+            <div>
+                <div class="text-sm font-medium text-white">CARBlog</div>
+                <div class="text-xs text-white/30">独立开发者 · Godot爱好者</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="page-section max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pb-20">
+    <div class="flex flex-col lg:flex-row gap-8">
+        <div class="flex-1 min-w-0">
+            <div class="glass-card rounded-2xl p-8 sm:p-10 blog-prose">
+                <div class="notice notice-info mb-8">
+                    <div class="notice-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                    <div>
+                        <strong>维度切换</strong> 是一种独特的游戏机制，玩家可以在2D和3D视角之间切换，或者在不同维度平面之间切换，创造出富有创意的解谜体验。
+                    </div>
+                </div>
+
+                <h2 id="s1">一、核心设计思路</h2>
+                <p>维度切换机制的核心在于：同一场景在不同维度下有不同表现。在3D模式下，玩家可以看到完整的空间结构；切换到2D模式后，场景被"压扁"到某个平面上，只有该平面上的物体可见/可交互。</p>
+
+                <h3 id="s1-1">1.1 技术方案选型</h3>
+                <p>在Godot 4.x中，我们有两种主流实现方案：</p>
+                <div class="spec-card mb-6">
+                    <h4 class="text-white font-medium mb-3"><i class="fa-solid fa-cube text-emerald-400 mr-2"></i>方案A：相机投影切换</h4>
+                    <p class="text-sm text-white/60">通过切换相机的投影模式（透视↔正交）来模拟维度切换。优点是简单，缺点是无法做到真正的"维度压制"。</p>
+                </div>
+                <div class="spec-card mb-6">
+                    <h4 class="text-white font-medium mb-3"><i class="fa-solid fa-layer-group text-teal-400 mr-2"></i>方案B：物理层 + 可见性控制</h4>
+                    <p class="text-sm text-white/60">为不同维度设置不同的物理层和可见性层，切换时动态启用/禁用对应层。这是本文采用的方案，灵活性更高。</p>
+                </div>
+
+                <h2 id="s2">二、场景层级设计</h2>
+                <p>正确的场景层级设计是维度切换成功的关键。推荐结构如下：</p>
+                <div class="code-block mb-6">
+                    <div class="code-header"><span>场景结构</span></div>
+                    <div class="code-body"><code>Main (Node3D)
+├── World3D        [3D维度内容，Layer: world_3d]
+├── World2D        [2D维度内容，Layer: world_2d]
+├── Player3D       [3D玩家，Layer: player_3d]
+├── Player2D       [2D玩家，Layer: player_2d]
+├── DimensionCamera  [维度相机]
+└── UILayer        [UI层，始终可见]</code></div>
+                </div>
+
+                <h2 id="s3">三、切换逻辑实现</h2>
+                <p>核心切换脚本负责协调相机、物理层、可见性的同步切换：</p>
+                <div class="code-block mb-6">
+                    <div class="code-header"><span>GDScript — dimension_manager.gd</span><button class="code-copy" onclick="navigator.clipboard.writeText(this.closest('.code-block').querySelector('.code-body').textContent)">复制</button></div>
+                    <div class="code-body"><code>extends Node3D
+
+signal dimension_changed(is_2d: bool)
+
+var current_is_2d: bool = false
+
+func toggle_dimension():
+    current_is_2d = !current_is_2d
+    apply_dimension(current_is_2d)
+
+func apply_dimension(is_2d: bool):
+    # 切换相机
+    if is_2d:
+        $DimensionCamera.switch_to_2d()
+    else:
+        $DimensionCamera.switch_to_3d()
+
+    # 切换物理层
+    set_physics_layer_enabled(2, is_2d)   # world_3d 层
+    set_physics_layer_enabled(3, !is_2d)  # world_2d 层
+
+    dimension_changed.emit(is_2d)</code></div>
+                </div>
+
+                <h2 id="s4">四、总结与扩展</h2>
+                <p>维度切换机制为游戏设计带来了极大的创意空间。你可以在此基础上扩展：</p>
+                <ul class="mb-6">
+                    <li class="mb-2"><strong>时间维度</strong>：结合时间倒流机制，在特定维度下才可以操控时间</li>
+                    <li class="mb-2"><strong>物体交互</strong>：某些物体在2D/3D下有不同属性（如2D下是平台，3D下是障碍物）</li>
+                    <li class="mb-2"><strong>视觉过渡</strong>：使用相机动画和后期处理效果让维度切换更有视觉冲击力</li>
+                </ul>
+
+                <div class="flex flex-wrap items-center gap-2 pt-8 mt-8 border-t border-white/[0.06]">
+                    <span class="text-sm text-white/40">标签：</span>
+                    <a href="#/blog" class="px-2 py-1 rounded-lg bg-emerald-500/10 text-emerald-400 text-xs hover:bg-emerald-500/20 transition-colors">Godot</a>
+                    <a href="#/blog" class="px-2 py-1 rounded-lg bg-teal-500/10 text-teal-400 text-xs hover:bg-teal-500/20 transition-colors">3D</a>
+                    <a href="#/blog" class="px-2 py-1 rounded-lg bg-indigo-500/10 text-indigo-400 text-xs hover:bg-indigo-500/20 transition-colors">游戏机制</a>
+                </div>
+            </div>
+
+            <div class="glass-card rounded-2xl p-8 mt-6 text-center">
+                <i class="fa-regular fa-comment-dots text-3xl text-white/20 mb-3"></i>
+                <p class="text-white/30 text-sm">评论区即将上线，敬请期待</p>
+            </div>
+        </div>
+
+        <div class="w-full lg:w-64 flex-shrink-0">
+            <div class="glass-card rounded-2xl p-5 sticky top-20">
+                <h3 class="text-sm font-bold text-white mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-list text-emerald-400"></i>目录
+                </h3>
+                <nav class="space-y-1 text-sm">
+                    <a href="#s1" class="toc-link block py-1.5 px-2 rounded-lg hover:bg-white/[0.05] text-white/50 hover:text-white transition-colors">一、核心设计思路</a>
+                    <a href="#s1-1" class="toc-link block py-1 pl-5 pr-2 rounded-lg hover:bg-white/[0.05] text-white/30 hover:text-white transition-colors text-xs">1.1 技术方案</a>
+                    <a href="#s2" class="toc-link block py-1.5 px-2 rounded-lg hover:bg-white/[0.05] text-white/50 hover:text-white transition-colors">二、场景层级设计</a>
+                    <a href="#s3" class="toc-link block py-1.5 px-2 rounded-lg hover:bg-white/[0.05] text-white/50 hover:text-white transition-colors">三、切换逻辑实现</a>
+                    <a href="#s4" class="toc-link block py-1.5 px-2 rounded-lg hover:bg-white/[0.05] text-white/50 hover:text-white transition-colors">四、总结与扩展</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.blog-prose h2 { font-size:1.25rem;font-weight:700;color:white;margin-top:2rem;margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:1px solid rgba(255,255,255,0.06); }
+.blog-prose h3 { font-size:1.1rem;font-weight:600;color:rgba(255,255,255,0.9);margin-top:1.5rem;margin-bottom:0.75rem; }
+.blog-prose p { color:rgba(255,255,255,0.6);line-height:1.8;margin-bottom:1rem; }
+.spec-card { background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:1rem;padding:1.25rem; }
+.code-block { background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.08);border-radius:0.75rem;overflow:hidden; }
+.code-header { display:flex;justify-content:space-between;align-items:center;padding:0.5rem 1rem;background:rgba(255,255,255,0.03);border-bottom:1px solid rgba(255,255,255,0.06);font-size:0.75rem;color:rgba(255,255,255,0.4); }
+.code-copy { background:rgba(255,255,255,0.08);border:none;color:rgba(255,255,255,0.5);padding:0.25rem 0.75rem;border-radius:0.375rem;cursor:pointer;font-size:0.75rem;transition:all 0.2s; }
+.code-copy:hover { background:rgba(255,255,255,0.15);color:white; }
+.code-body { padding:1rem;overflow-x:auto; }
+.code-body code { font-family:'JetBrains Mono',monospace;font-size:0.875rem;color:rgb(192,132,252);white-space:pre; }
+.notIce { display:flex;gap:0.75rem;padding:1rem 1.25rem;border-radius:0.75rem;font-size:0.9rem;line-height:1.6; }
+.notIce-info { background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.2);color:rgba(147,197,253,0.9); }
+.notIce-icon { flex-shrink:0;margin-top:0.125rem; }
+.toc-link.active { color:rgb(16,185,129) !important;background:rgba(16,185,129,0.1); }
+</style>
+
+<script>
+(function(){const l=document.querySelectorAll('.toc-link');if(l.length===0)return;window.addEventListener('scroll',()=>{const s=window.scrollY+120;let c='';l.forEach(a=>{const h=a.getAttribute('href');if(!h.startsWith('#s'))return;const e=document.getElementById(h.slice(1));if(e&&e.offsetTop<=s)c=h;});l.forEach(a=>{a.classList.toggle('active',a.getAttribute('href')===c);});},{passive:true});})();
+</script>
