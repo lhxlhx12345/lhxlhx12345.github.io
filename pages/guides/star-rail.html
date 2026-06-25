@@ -1,210 +1,342 @@
 <!-- ============================================================
-   崩坏星穹铁道 — 游戏攻略首页 (二级页面)
-   包含游戏介绍、攻略分类、最新攻略文章列表
+   崩坏星穹铁道 v4 — 游戏攻略首页
+   版本：4.3「沉于生者的忘川」
    ============================================================ -->
 
 <!-- 面包屑导航 -->
-<nav class="page-section max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
+<nav class="page-section max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
     <ol class="flex flex-wrap items-center gap-2 text-sm text-white/30">
         <li><a href="#/" class="hover:text-white transition-colors">首页</a></li>
         <li><i class="fa-solid fa-chevron-right text-[10px]"></i></li>
         <li><a href="#/guides" class="hover:text-white transition-colors">游戏攻略</a></li>
         <li><i class="fa-solid fa-chevron-right text-[10px]"></i></li>
-        <li class="text-purple-400">崩坏星穹铁道</li>
+        <li class="text-amber-400">崩坏星穹铁道</li>
     </ol>
 </nav>
 
-<!-- 游戏 Banner (动画背景) -->
-<section class="page-section relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-6">
-    <div class="relative rounded-3xl overflow-hidden border border-white/[0.06] p-8 sm:p-10">
-        <!-- 星空动画背景 -->
-        <div class="absolute inset-0 bg-[#0a0520] star-field-banner"></div>
-        <div class="absolute inset-0 bg-gradient-to-br from-purple-600/40 via-blue-600/25 to-indigo-700/40"></div>
-        <!-- 浮动装饰 -->
-        <div class="absolute top-8 right-12 w-20 h-20 rounded-full bg-purple-400/20 blur-2xl orb-banner-1"></div>
-        <div class="absolute bottom-6 left-10 w-16 h-16 rounded-full bg-blue-400/15 blur-2xl orb-banner-2"></div>
-        <div class="absolute top-1/2 right-1/4 w-32 h-32 rounded-full bg-white/5 blur-3xl pulse-glow-slow"></div>
-        <!-- 背景文字装饰 -->
-        <div class="absolute top-1/2 right-8 -translate-y-1/2 text-[140px] font-black text-white/[0.02] select-none pointer-events-none leading-none hidden lg:block">
-            星穹
-        </div>
+<!-- 游戏 Banner -->
+<section class="page-section relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-6">
+    <div class="relative rounded-3xl overflow-hidden border border-white/[0.06] p-8 sm:p-12">
+        <!-- 深空背景 -->
+        <div class="absolute inset-0 bg-[#08041a] star-field-banner"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-purple-600/35 via-blue-600/25 to-indigo-700/40"></div>
+
+        <!-- 星轨装饰线 -->
+        <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-400/30 to-transparent"></div>
+
+        <!-- 浮动光球 -->
+        <div class="absolute top-8 right-16 w-24 h-24 rounded-full bg-purple-400/20 blur-2xl orb-float-1"></div>
+        <div class="absolute bottom-8 left-12 w-20 h-20 rounded-full bg-blue-400/15 blur-2xl orb-float-2"></div>
+        <div class="absolute top-1/2 left-1/3 w-32 h-32 rounded-full bg-amber-300/10 blur-3xl orb-float-3"></div>
+
+        <!-- 版本水印 -->
+        <div class="absolute top-1/2 right-6 -translate-y-1/2 text-[140px] font-black text-white/[0.02] select-none pointer-events-none leading-none hidden xl:block" style="font-family: 'Inter', sans-serif;">4.3</div>
 
         <div class="relative z-10">
-            <!-- 标签 -->
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/15 border border-purple-500/25 text-xs text-purple-400 mb-4">
-                <i class="fa-solid fa-gamepad"></i>
-                HoYoverse / miHoYo
+            <!-- 版本标签 + 标签 -->
+            <div class="flex flex-wrap items-center gap-3 mb-5">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/15 border border-amber-500/25 text-xs text-amber-400 font-medium">
+                    <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+                    v4.3「沉于生者的忘川」
+                </div>
+                <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-500/15 border border-purple-500/25 text-xs text-purple-400">
+                    <i class="fa-solid fa-gamepad text-[10px]"></i>
+                    HoYoverse
+                </div>
             </div>
 
-            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-3">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-3 leading-tight">
                 崩坏星穹铁道
-                <span class="block text-lg sm:text-xl font-normal text-white/40 mt-1">Honkai: Star Rail</span>
+                <span class="block text-lg sm:text-xl font-normal text-white/35 mt-1.5">Honkai: Star Rail</span>
             </h1>
 
             <p class="text-white/50 text-sm sm:text-base max-w-lg leading-relaxed mb-6">
-                一款银河冒险策略RPG。玩家将乘坐「星穹列车」，穿越璀璨星河，在广袤的宇宙中与伙伴们共同对抗「星核」的威胁，探索被封印的真相。
+                乘坐「星穹列车」穿越璀璨星河，在广袤宇宙中与伙伴们共同对抗「星核」威胁。涵盖新手入门、角色培养、配队策略与版本更新的全方位攻略库。
             </p>
 
-            <!-- 统计 -->
-            <div class="flex flex-wrap gap-6 text-sm">
-                <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-file-lines text-purple-400"></i>
-                    <span class="text-white/50">8 篇攻略</span>
+            <!-- 统计条 -->
+            <div class="flex flex-wrap items-center gap-6 text-sm">
+                <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/[0.03] border border-white/[0.06]">
+                    <i class="fa-solid fa-file-lines text-amber-400"></i>
+                    <span class="text-white/60">35 篇攻略</span>
                 </div>
-                <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-clock text-purple-400"></i>
-                    <span class="text-white/50">持续更新中</span>
+                <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/[0.03] border border-white/[0.06]">
+                    <i class="fa-solid fa-clock text-amber-400"></i>
+                    <span class="text-white/60">持续更新</span>
+                </div>
+                <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/[0.03] border border-white/[0.06]">
+                    <i class="fa-solid fa-tag text-amber-400"></i>
+                    <span class="text-white/60">5 大分类</span>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
+<!-- 当前版本高亮 -->
+<section class="page-section max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <a href="#/guides/star-rail/version/endgame-guide" class="glass-card glow-card group block rounded-2xl p-5 cursor-pointer bg-gradient-to-r from-[#1a1228] via-[#181425] to-[#1a1228] border border-amber-500/10">
+        <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+            <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-amber-500/20 to-purple-500/20 border border-amber-500/15">
+                <i class="fa-solid fa-star text-amber-400 text-lg"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-2 mb-1">
+                    <span class="px-2 py-0.5 text-[10px] rounded-full bg-amber-500/15 text-amber-400 font-medium">当前版本</span>
+                    <span class="text-xs text-white/25">v4.3「沉于生者的忘川」· 2026年6月</span>
+                </div>
+                <h3 class="text-base font-semibold text-white group-hover:text-amber-400 transition-colors">
+                    4.3版本终局玩法指南 — 差分宇宙·永恒乐土、末日幻影全解析
+                </h3>
+            </div>
+            <i class="fa-solid fa-chevron-right text-white/20 group-hover:text-amber-400 group-hover:translate-x-1 transition-all duration-200 hidden sm:block"></i>
+        </div>
+    </a>
+</section>
+
 <!-- 攻略分类 -->
-<section class="page-section max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <h2 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
-        <i class="fa-solid fa-compass text-purple-400"></i>攻略分类
-    </h2>
+<section class="page-section max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="flex items-center justify-between mb-6">
+        <h2 class="text-xl font-bold text-white flex items-center gap-2">
+            <i class="fa-solid fa-compass text-amber-400"></i>攻略分类
+        </h2>
+        <span class="text-xs text-white/25">共 5 大分类 · 35 篇攻略</span>
+    </div>
 
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-        <!-- 新手入门 (有内容) -->
-        <a href="#/guides/star-rail/beginner"
-           class="glass-card group rounded-xl p-4 text-center cursor-pointer">
-            <div class="w-10 h-10 mx-auto mb-3 flex items-center justify-center rounded-lg bg-purple-500/15 text-purple-400 group-hover:bg-purple-500/25 transition-colors">
-                <i class="fa-solid fa-person-walking text-sm"></i>
+        <!-- 新手入门 — beginner/ (8篇) -->
+        <a href="#/guides/star-rail/beginner" class="glass-card glow-card group rounded-2xl p-5 text-center cursor-pointer relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-b from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="relative z-10">
+                <div class="w-12 h-12 mx-auto mb-3 flex items-center justify-center rounded-xl bg-purple-500/10 text-purple-400 group-hover:bg-purple-500/20 group-hover:scale-110 transition-all duration-300">
+                    <i class="fa-solid fa-person-walking text-lg"></i>
+                </div>
+                <h3 class="text-sm font-semibold text-white mb-1">新手入门</h3>
+                <p class="text-[11px] text-white/30 mb-2">快速上手银河冒险</p>
+                <span class="inline-block px-2 py-0.5 text-[10px] rounded-full bg-purple-500/10 text-purple-400 font-medium">8 篇</span>
             </div>
-            <h3 class="text-sm font-medium text-white group-hover:text-purple-400 transition-colors">新手入门</h3>
-            <p class="text-[10px] text-white/30 mt-1">快速上手</p>
         </a>
 
-        <!-- 角色培养 (预留) -->
-        <div class="glass-card rounded-xl p-4 text-center opacity-50 cursor-not-allowed">
-            <div class="w-10 h-10 mx-auto mb-3 flex items-center justify-center rounded-lg bg-white/5 text-white/30">
-                <i class="fa-solid fa-user-gear text-sm"></i>
+        <!-- 角色培养 — character-build/ (7篇) -->
+        <a href="#/guides/star-rail/character-build" class="glass-card glow-card group rounded-2xl p-5 text-center cursor-pointer relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-b from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="relative z-10">
+                <div class="w-12 h-12 mx-auto mb-3 flex items-center justify-center rounded-xl bg-blue-500/10 text-blue-400 group-hover:bg-blue-500/20 group-hover:scale-110 transition-all duration-300">
+                    <i class="fa-solid fa-user-gear text-lg"></i>
+                </div>
+                <h3 class="text-sm font-semibold text-white mb-1">角色培养</h3>
+                <p class="text-[11px] text-white/30 mb-2">光锥遗器与行迹</p>
+                <span class="inline-block px-2 py-0.5 text-[10px] rounded-full bg-blue-500/10 text-blue-400 font-medium">7 篇</span>
             </div>
-            <h3 class="text-sm font-medium text-white/50">角色培养</h3>
-            <p class="text-[10px] text-white/20 mt-1">即将上线</p>
-        </div>
+        </a>
 
-        <!-- 配队推荐 (预留) -->
-        <div class="glass-card rounded-xl p-4 text-center opacity-50 cursor-not-allowed">
-            <div class="w-10 h-10 mx-auto mb-3 flex items-center justify-center rounded-lg bg-white/5 text-white/30">
-                <i class="fa-solid fa-people-group text-sm"></i>
+        <!-- 配队推荐 — team/ (10篇) -->
+        <a href="#/guides/star-rail/team" class="glass-card glow-card group rounded-2xl p-5 text-center cursor-pointer relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-b from-indigo-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="relative z-10">
+                <div class="w-12 h-12 mx-auto mb-3 flex items-center justify-center rounded-xl bg-indigo-500/10 text-indigo-400 group-hover:bg-indigo-500/20 group-hover:scale-110 transition-all duration-300">
+                    <i class="fa-solid fa-people-group text-lg"></i>
+                </div>
+                <h3 class="text-sm font-semibold text-white mb-1">配队推荐</h3>
+                <p class="text-[11px] text-white/30 mb-2">强力阵容搭配</p>
+                <span class="inline-block px-2 py-0.5 text-[10px] rounded-full bg-indigo-500/10 text-indigo-400 font-medium">10 篇</span>
             </div>
-            <h3 class="text-sm font-medium text-white/50">配队推荐</h3>
-            <p class="text-[10px] text-white/20 mt-1">即将上线</p>
-        </div>
+        </a>
 
-        <!-- 模拟宇宙 (预留) -->
-        <div class="glass-card rounded-xl p-4 text-center opacity-50 cursor-not-allowed">
-            <div class="w-10 h-10 mx-auto mb-3 flex items-center justify-center rounded-lg bg-white/5 text-white/30">
-                <i class="fa-solid fa-cube text-sm"></i>
+        <!-- 版本更新 — version/ (5篇) -->
+        <a href="#/guides/star-rail/version" class="glass-card glow-card group rounded-2xl p-5 text-center cursor-pointer relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-b from-amber-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="relative z-10">
+                <div class="w-12 h-12 mx-auto mb-3 flex items-center justify-center rounded-xl bg-amber-500/10 text-amber-400 group-hover:bg-amber-500/20 group-hover:scale-110 transition-all duration-300">
+                    <i class="fa-solid fa-rocket text-lg"></i>
+                </div>
+                <h3 class="text-sm font-semibold text-white mb-1">版本更新</h3>
+                <p class="text-[11px] text-white/30 mb-2">新内容与规划</p>
+                <span class="inline-block px-2 py-0.5 text-[10px] rounded-full bg-amber-500/10 text-amber-400 font-medium">5 篇</span>
             </div>
-            <h3 class="text-sm font-medium text-white/50">模拟宇宙</h3>
-            <p class="text-[10px] text-white/20 mt-1">即将上线</p>
-        </div>
+        </a>
 
-        <!-- 忘却之庭 (预留) -->
-        <div class="glass-card rounded-xl p-4 text-center opacity-50 cursor-not-allowed">
-            <div class="w-10 h-10 mx-auto mb-3 flex items-center justify-center rounded-lg bg-white/5 text-white/30">
-                <i class="fa-solid fa-ranking-star text-sm"></i>
+        <!-- 遗器攻略 — character-build/relic-guide -->
+        <a href="#/guides/star-rail/character-build/relic-guide" class="glass-card glow-card group rounded-2xl p-5 text-center cursor-pointer relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-b from-violet-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="relative z-10">
+                <div class="w-12 h-12 mx-auto mb-3 flex items-center justify-center rounded-xl bg-violet-500/10 text-violet-400 group-hover:bg-violet-500/20 group-hover:scale-110 transition-all duration-300">
+                    <i class="fa-solid fa-ring text-lg"></i>
+                </div>
+                <h3 class="text-sm font-semibold text-white mb-1">遗器攻略</h3>
+                <p class="text-[11px] text-white/30 mb-2">套装与词条选择</p>
+                <span class="inline-block px-2 py-0.5 text-[10px] rounded-full bg-violet-500/10 text-violet-400 font-medium">热门</span>
             </div>
-            <h3 class="text-sm font-medium text-white/50">忘却之庭</h3>
-            <p class="text-[10px] text-white/20 mt-1">即将上线</p>
-        </div>
+        </a>
 
-        <!-- 遗器攻略 (预留) -->
-        <div class="glass-card rounded-xl p-4 text-center opacity-50 cursor-not-allowed">
-            <div class="w-10 h-10 mx-auto mb-3 flex items-center justify-center rounded-lg bg-white/5 text-white/30">
-                <i class="fa-solid fa-ring text-sm"></i>
+        <!-- 活动攻略 — event/ (5篇) -->
+        <a href="#/guides/star-rail/event" class="glass-card glow-card group rounded-2xl p-5 text-center cursor-pointer relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-b from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="relative z-10">
+                <div class="w-12 h-12 mx-auto mb-3 flex items-center justify-center rounded-xl bg-cyan-500/10 text-cyan-400 group-hover:bg-cyan-500/20 group-hover:scale-110 transition-all duration-300">
+                    <i class="fa-solid fa-calendar-star text-lg"></i>
+                </div>
+                <h3 class="text-sm font-semibold text-white mb-1">活动与福利</h3>
+                <p class="text-[11px] text-white/30 mb-2">礼包码与活动攻略</p>
+                <span class="inline-block px-2 py-0.5 text-[10px] rounded-full bg-cyan-500/10 text-cyan-400 font-medium">5 篇</span>
             </div>
-            <h3 class="text-sm font-medium text-white/50">遗器攻略</h3>
-            <p class="text-[10px] text-white/20 mt-1">即将上线</p>
-        </div>
+        </a>
 
-        <!-- 活动攻略 (预留) -->
-        <div class="glass-card rounded-xl p-4 text-center opacity-50 cursor-not-allowed">
-            <div class="w-10 h-10 mx-auto mb-3 flex items-center justify-center rounded-lg bg-white/5 text-white/30">
-                <i class="fa-solid fa-calendar-star text-sm"></i>
+        <!-- 忘却之庭 — beginner/memory-of-chaos -->
+        <a href="#/guides/star-rail/beginner/memory-of-chaos" class="glass-card glow-card group rounded-2xl p-5 text-center cursor-pointer relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-b from-rose-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="relative z-10">
+                <div class="w-12 h-12 mx-auto mb-3 flex items-center justify-center rounded-xl bg-rose-500/10 text-rose-400 group-hover:bg-rose-500/20 group-hover:scale-110 transition-all duration-300">
+                    <i class="fa-solid fa-ranking-star text-lg"></i>
+                </div>
+                <h3 class="text-sm font-semibold text-white mb-1">忘却之庭</h3>
+                <p class="text-[11px] text-white/30 mb-2">高难挑战攻略</p>
+                <span class="inline-block px-2 py-0.5 text-[10px] rounded-full bg-rose-500/10 text-rose-400 font-medium">攻略</span>
             </div>
-            <h3 class="text-sm font-medium text-white/50">活动攻略</h3>
-            <p class="text-[10px] text-white/20 mt-1">即将上线</p>
-        </div>
+        </a>
 
-        <!-- 资源获取 (预留) -->
-        <div class="glass-card rounded-xl p-4 text-center opacity-50 cursor-not-allowed">
-            <div class="w-10 h-10 mx-auto mb-3 flex items-center justify-center rounded-lg bg-white/5 text-white/30">
-                <i class="fa-solid fa-coins text-sm"></i>
+        <!-- 模拟宇宙 — beginner/simulated-universe -->
+        <a href="#/guides/star-rail/beginner/simulated-universe" class="glass-card glow-card group rounded-2xl p-5 text-center cursor-pointer relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-b from-teal-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="relative z-10">
+                <div class="w-12 h-12 mx-auto mb-3 flex items-center justify-center rounded-xl bg-teal-500/10 text-teal-400 group-hover:bg-teal-500/20 group-hover:scale-110 transition-all duration-300">
+                    <i class="fa-solid fa-cube text-lg"></i>
+                </div>
+                <h3 class="text-sm font-semibold text-white mb-1">模拟宇宙</h3>
+                <p class="text-[11px] text-white/30 mb-2">Roguelike玩法</p>
+                <span class="inline-block px-2 py-0.5 text-[10px] rounded-full bg-teal-500/10 text-teal-400 font-medium">攻略</span>
             </div>
-            <h3 class="text-sm font-medium text-white/50">资源获取</h3>
-            <p class="text-[10px] text-white/20 mt-1">即将上线</p>
-        </div>
+        </a>
     </div>
 </section>
 
 <!-- 最新攻略文章列表 -->
-<section class="page-section max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pb-20">
-    <h2 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
-        <i class="fa-solid fa-clock-rotate-left text-purple-400"></i>最新攻略
-    </h2>
+<section class="page-section max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 pb-24">
+    <div class="flex items-center justify-between mb-6">
+        <h2 class="text-xl font-bold text-white flex items-center gap-2">
+            <i class="fa-solid fa-clock-rotate-left text-amber-400"></i>精选攻略
+        </h2>
+        <a href="#/guides/star-rail/beginner" class="text-xs text-white/25 hover:text-amber-400 transition-colors">
+            查看全部 35 篇 <i class="fa-solid fa-arrow-right ml-1 text-[10px]"></i>
+        </a>
+    </div>
 
-    <div class="space-y-4">
-        <!-- 文章 #1: 新手入门 -->
-        <a href="#/guides/star-rail/beginner"
-           class="glass-card group flex flex-col sm:flex-row gap-4 sm:items-center rounded-2xl p-5 cursor-pointer">
-            <!-- 序号 -->
-            <div class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-purple-500/15 text-purple-400 font-bold text-sm">
-                01
-            </div>
-            <!-- 内容 -->
+    <div class="space-y-3">
+        <!-- #1: 新手入门 -->
+        <a href="#/guides/star-rail/beginner" class="glass-card group flex flex-col sm:flex-row gap-4 sm:items-center rounded-2xl p-5 cursor-pointer">
+            <div class="flex-shrink-0 w-11 h-11 flex items-center justify-center rounded-xl bg-purple-500/10 text-purple-400 font-bold text-sm border border-purple-500/15">01</div>
             <div class="flex-1 min-w-0">
                 <div class="flex items-center gap-2 mb-1">
-                    <span class="px-2 py-0.5 text-[10px] rounded-full bg-purple-500/15 text-purple-400">新手入门</span>
-                    <span class="text-[10px] text-white/20">2026-06-21</span>
+                    <span class="px-2 py-0.5 text-[10px] rounded-full bg-purple-500/10 text-purple-400 font-medium">新手入门</span>
+                    <span class="text-[11px] text-white/20">2026-06-21</span>
                 </div>
-                <h3 class="text-base sm:text-lg font-semibold text-white group-hover:text-purple-400 transition-colors truncate">
-                    崩坏星穹铁道新手入门全面指南
-                </h3>
-                <p class="text-white/30 text-sm mt-1 line-clamp-2">
-                    从零开始了解战斗系统、角色属性、资源管理，帮助开拓者快速上手银河冒险旅程。
-                </p>
+                <h3 class="text-base font-semibold text-white group-hover:text-purple-400 transition-colors truncate">崩坏星穹铁道新手入门全面指南</h3>
+                <p class="text-white/30 text-sm mt-1 line-clamp-2">从零开始了解战斗系统、角色属性、资源管理，帮助开拓者快速上手银河冒险旅程。</p>
             </div>
-            <!-- 箭头 -->
-            <i class="fa-solid fa-chevron-right text-white/20 group-hover:text-purple-400 group-hover:translate-x-1 transition-all duration-200"></i>
+            <i class="fa-solid fa-chevron-right text-white/15 group-hover:text-purple-400 group-hover:translate-x-1 transition-all duration-200 hidden sm:block"></i>
         </a>
 
-        <!-- 占位文章 (提示后续内容) -->
-        <div class="glass-card rounded-2xl p-5 opacity-40">
-            <div class="flex flex-col sm:flex-row gap-4 sm:items-center">
-                <div class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 text-white/20 font-bold text-sm">02</div>
-                <div class="flex-1 min-w-0">
-                    <div class="flex items-center gap-2 mb-3">
-                        <div class="h-4 w-16 rounded bg-white/5 shimmer"></div>
-                        <div class="h-4 w-20 rounded bg-white/5 shimmer"></div>
-                    </div>
-                    <div class="h-5 w-3/4 rounded bg-white/5 shimmer mb-2"></div>
-                    <div class="h-4 w-full rounded bg-white/5 shimmer"></div>
+        <!-- #2: 超击破队 -->
+        <a href="#/guides/star-rail/team/break-team" class="glass-card group flex flex-col sm:flex-row gap-4 sm:items-center rounded-2xl p-5 cursor-pointer">
+            <div class="flex-shrink-0 w-11 h-11 flex items-center justify-center rounded-xl bg-indigo-500/10 text-indigo-400 font-bold text-sm border border-indigo-500/15">02</div>
+            <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-2 mb-1">
+                    <span class="px-2 py-0.5 text-[10px] rounded-full bg-indigo-500/10 text-indigo-400 font-medium">配队推荐</span>
+                    <span class="text-[11px] text-white/20">2026-06-20</span>
                 </div>
+                <h3 class="text-base font-semibold text-white group-hover:text-indigo-400 transition-colors truncate">超击破队完全指南</h3>
+                <p class="text-white/30 text-sm mt-1 line-clamp-2">击破特攻体系详解，韧性与超击破机制运作原理，核心角色搭配与遗器光锥选择。</p>
             </div>
-        </div>
+            <i class="fa-solid fa-chevron-right text-white/15 group-hover:text-indigo-400 group-hover:translate-x-1 transition-all duration-200 hidden sm:block"></i>
+        </a>
 
-        <div class="glass-card rounded-2xl p-5 opacity-40">
-            <div class="flex flex-col sm:flex-row gap-4 sm:items-center">
-                <div class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 text-white/20 font-bold text-sm">03</div>
-                <div class="flex-1 min-w-0">
-                    <div class="flex items-center gap-2 mb-3">
-                        <div class="h-4 w-16 rounded bg-white/5 shimmer"></div>
-                        <div class="h-4 w-20 rounded bg-white/5 shimmer"></div>
-                    </div>
-                    <div class="h-5 w-3/4 rounded bg-white/5 shimmer mb-2"></div>
-                    <div class="h-4 w-full rounded bg-white/5 shimmer"></div>
+        <!-- #3: 光锥选择 -->
+        <a href="#/guides/star-rail/character-build/lightcone-guide" class="glass-card group flex flex-col sm:flex-row gap-4 sm:items-center rounded-2xl p-5 cursor-pointer">
+            <div class="flex-shrink-0 w-11 h-11 flex items-center justify-center rounded-xl bg-blue-500/10 text-blue-400 font-bold text-sm border border-blue-500/15">03</div>
+            <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-2 mb-1">
+                    <span class="px-2 py-0.5 text-[10px] rounded-full bg-blue-500/10 text-blue-400 font-medium">角色培养</span>
+                    <span class="text-[11px] text-white/20">2026-06-19</span>
                 </div>
+                <h3 class="text-base font-semibold text-white group-hover:text-blue-400 transition-colors truncate">崩坏星穹铁道光锥选择完全指南</h3>
+                <p class="text-white/30 text-sm mt-1 line-clamp-2">全命途光锥强度排行，各角色最优光锥推荐，星魂与专武抽卡优先级分析。</p>
             </div>
-        </div>
+            <i class="fa-solid fa-chevron-right text-white/15 group-hover:text-blue-400 group-hover:translate-x-1 transition-all duration-200 hidden sm:block"></i>
+        </a>
+
+        <!-- #4: 战斗系统 -->
+        <a href="#/guides/star-rail/beginner/battle-basics" class="glass-card group flex flex-col sm:flex-row gap-4 sm:items-center rounded-2xl p-5 cursor-pointer">
+            <div class="flex-shrink-0 w-11 h-11 flex items-center justify-center rounded-xl bg-purple-500/10 text-purple-400 font-bold text-sm border border-purple-500/15">04</div>
+            <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-2 mb-1">
+                    <span class="px-2 py-0.5 text-[10px] rounded-full bg-purple-500/10 text-purple-400 font-medium">新手入门</span>
+                    <span class="text-[11px] text-white/20">2026-06-18</span>
+                </div>
+                <h3 class="text-base font-semibold text-white group-hover:text-purple-400 transition-colors truncate">崩坏星穹铁道战斗系统详解</h3>
+                <p class="text-white/30 text-sm mt-1 line-clamp-2">弱点击破、战技点管理、终结技释放时机等核心战斗机制全方位解析。</p>
+            </div>
+            <i class="fa-solid fa-chevron-right text-white/15 group-hover:text-purple-400 group-hover:translate-x-1 transition-all duration-200 hidden sm:block"></i>
+        </a>
+
+        <!-- #5: DOT队 -->
+        <a href="#/guides/star-rail/team/dot-team" class="glass-card group flex flex-col sm:flex-row gap-4 sm:items-center rounded-2xl p-5 cursor-pointer">
+            <div class="flex-shrink-0 w-11 h-11 flex items-center justify-center rounded-xl bg-indigo-500/10 text-indigo-400 font-bold text-sm border border-indigo-500/15">05</div>
+            <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-2 mb-1">
+                    <span class="px-2 py-0.5 text-[10px] rounded-full bg-indigo-500/10 text-indigo-400 font-medium">配队推荐</span>
+                    <span class="text-[11px] text-white/20">2026-06-17</span>
+                </div>
+                <h3 class="text-base font-semibold text-white group-hover:text-indigo-400 transition-colors truncate">DOT队完全指南</h3>
+                <p class="text-white/30 text-sm mt-1 line-clamp-2">持续伤害体系深度解析，卡芙卡、黑天鹅等角色机制联动，遗器与光锥最优搭配。</p>
+            </div>
+            <i class="fa-solid fa-chevron-right text-white/15 group-hover:text-indigo-400 group-hover:translate-x-1 transition-all duration-200 hidden sm:block"></i>
+        </a>
+
+        <!-- #6: 遗器攻略 -->
+        <a href="#/guides/star-rail/character-build/relic-guide" class="glass-card group flex flex-col sm:flex-row gap-4 sm:items-center rounded-2xl p-5 cursor-pointer">
+            <div class="flex-shrink-0 w-11 h-11 flex items-center justify-center rounded-xl bg-violet-500/10 text-violet-400 font-bold text-sm border border-violet-500/15">06</div>
+            <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-2 mb-1">
+                    <span class="px-2 py-0.5 text-[10px] rounded-full bg-violet-500/10 text-violet-400 font-medium">遗器攻略</span>
+                    <span class="text-[11px] text-white/20">2026-06-16</span>
+                </div>
+                <h3 class="text-base font-semibold text-white group-hover:text-violet-400 transition-colors truncate">遗器套装与词条选择指南</h3>
+                <p class="text-white/30 text-sm mt-1 line-clamp-2">各套遗器效果对比分析，主词条与副词条优先级计算，高性价比刷取路线推荐。</p>
+            </div>
+            <i class="fa-solid fa-chevron-right text-white/15 group-hover:text-violet-400 group-hover:translate-x-1 transition-all duration-200 hidden sm:block"></i>
+        </a>
+
+        <!-- #7: 兑换码福利 -->
+        <a href="#/guides/star-rail/event/gift-code" class="glass-card group flex flex-col sm:flex-row gap-4 sm:items-center rounded-2xl p-5 cursor-pointer">
+            <div class="flex-shrink-0 w-11 h-11 flex items-center justify-center rounded-xl bg-cyan-500/10 text-cyan-400 font-bold text-sm border border-cyan-500/15">07</div>
+            <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-2 mb-1">
+                    <span class="px-2 py-0.5 text-[10px] rounded-full bg-cyan-500/10 text-cyan-400 font-medium">活动与福利</span>
+                    <span class="text-[11px] text-white/20">2026-06-15</span>
+                </div>
+                <h3 class="text-base font-semibold text-white group-hover:text-cyan-400 transition-colors truncate">兑换码与福利汇总 — 持续更新</h3>
+                <p class="text-white/30 text-sm mt-1 line-clamp-2">最新有效兑换码整理，星琼获取渠道汇总，日常/周常/活动星琼产量计算。</p>
+            </div>
+            <i class="fa-solid fa-chevron-right text-white/15 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all duration-200 hidden sm:block"></i>
+        </a>
+
+        <!-- #8: 版本更新 -->
+        <a href="#/guides/star-rail/version/version-2.4-guide" class="glass-card group flex flex-col sm:flex-row gap-4 sm:items-center rounded-2xl p-5 cursor-pointer">
+            <div class="flex-shrink-0 w-11 h-11 flex items-center justify-center rounded-xl bg-amber-500/10 text-amber-400 font-bold text-sm border border-amber-500/15">08</div>
+            <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-2 mb-1">
+                    <span class="px-2 py-0.5 text-[10px] rounded-full bg-amber-500/10 text-amber-400 font-medium">版本更新</span>
+                    <span class="text-[11px] text-white/20">2026-06-14</span>
+                </div>
+                <h3 class="text-base font-semibold text-white group-hover:text-amber-400 transition-colors truncate">版本前瞻与抽卡规划指南</h3>
+                <p class="text-white/30 text-sm mt-1 line-clamp-2">新版本内容一览，新角色技能分析，卡池规划与星琼储备策略，新手抽卡优先级。</p>
+            </div>
+            <i class="fa-solid fa-chevron-right text-white/15 group-hover:text-amber-400 group-hover:translate-x-1 transition-all duration-200 hidden sm:block"></i>
+        </a>
     </div>
 </section>
 
-<!-- ====== Banner 动画 CSS ====== -->
+<!-- ====== 动画 CSS ====== -->
 <style>
 .star-field-banner {
     background-image:
@@ -223,26 +355,25 @@
     0%   { background-position: 0% 0%; opacity: 1; }
     100% { background-position: 30% 30%; opacity: 0.7; }
 }
-.orb-banner-1 { animation: orb-float-1 3s ease-in-out infinite; }
-.orb-banner-2 { animation: orb-float-2 4s ease-in-out infinite 0.5s; }
+.orb-float-1 { animation: orb-float-1 4s ease-in-out infinite; }
+.orb-float-2 { animation: orb-float-2 5s ease-in-out infinite 0.5s; }
+.orb-float-3 { animation: orb-float-3 3.5s ease-in-out infinite 1s; }
 @keyframes orb-float-1 {
-    0%, 100% { transform: translateY(0) scale(1); }
-    50% { transform: translateY(-10px) scale(1.15); }
+    0%, 100% { transform: translateY(0) scale(1); opacity: 0.7; }
+    50% { transform: translateY(-12px) scale(1.2); opacity: 1; }
 }
 @keyframes orb-float-2 {
-    0%, 100% { transform: translateY(0) scale(1); }
-    50% { transform: translateY(-6px) scale(1.1); }
+    0%, 100% { transform: translateY(0) scale(1); opacity: 0.6; }
+    50% { transform: translateY(-8px) scale(1.15); opacity: 0.9; }
 }
-@keyframes pulse-glow-slow {
-    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
-    50% { transform: translate(-50%, -50%) scale(1.3); opacity: 0.8; }
+@keyframes orb-float-3 {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
+    50% { transform: translate(-50%, -50%) scale(1.3); opacity: 0.6; }
 }
-.pulse-glow-slow { animation: pulse-glow-slow 4s ease-in-out infinite; }
 </style>
 
 <script>
 (function() {
     if (typeof gsap === 'undefined') return;
-    // 入场动画由 app.js 统一驱动 (pageEnter + scrollReveal)
 })();
 </script>

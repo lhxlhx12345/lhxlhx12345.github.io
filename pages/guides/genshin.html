@@ -1,10 +1,10 @@
 <!-- ============================================================
-   原神 — 游戏攻略首页 (二级页面)
-   包含游戏介绍、攻略分类、最新攻略文章列表
+   原神 v4 — 游戏攻略首页
+   版本：6.7 月之七「空月之歌·行律」
    ============================================================ -->
 
 <!-- 面包屑导航 -->
-<nav class="page-section max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
+<nav class="page-section max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
     <ol class="flex flex-wrap items-center gap-2 text-sm text-white/30">
         <li><a href="#/" class="hover:text-white transition-colors">首页</a></li>
         <li><i class="fa-solid fa-chevron-right text-[10px]"></i></li>
@@ -14,64 +14,100 @@
     </ol>
 </nav>
 
-<!-- 游戏 Banner (动画背景) -->
-<section class="page-section relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-6">
-    <div class="relative rounded-3xl overflow-hidden border border-white/[0.06] p-8 sm:p-10">
-        <!-- 暖色光晕动画背景 -->
+<!-- 游戏 Banner -->
+<section class="page-section relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-6">
+    <div class="relative rounded-3xl overflow-hidden border border-white/[0.06] p-8 sm:p-12">
+        <!-- 暖色光晕 -->
         <div class="absolute inset-0 bg-[#1a1005]"></div>
         <div class="absolute inset-0 bg-gradient-to-br from-amber-600/30 via-orange-600/20 to-yellow-700/30"></div>
+        <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-400/30 to-transparent"></div>
+
         <!-- 浮动光球 -->
-        <div class="absolute top-6 right-12 w-20 h-20 rounded-full bg-amber-400/20 blur-2xl genshin-orb-1"></div>
-        <div class="absolute bottom-8 left-10 w-16 h-16 rounded-full bg-orange-400/15 blur-2xl genshin-orb-2"></div>
-        <div class="absolute top-1/2 left-1/3 w-24 h-24 rounded-full bg-yellow-300/10 blur-3xl pulse-glow-amber"></div>
-        <!-- 元素符号浮动 -->
+        <div class="absolute top-6 right-12 w-24 h-24 rounded-full bg-amber-400/20 blur-2xl genshin-orb-1"></div>
+        <div class="absolute bottom-8 left-10 w-20 h-20 rounded-full bg-orange-400/15 blur-2xl genshin-orb-2"></div>
+        <div class="absolute top-1/2 left-1/3 w-32 h-32 rounded-full bg-yellow-300/10 blur-3xl pulse-glow-amber"></div>
+
+        <!-- 元素符号 -->
         <div class="absolute top-10 right-20 w-14 h-14 opacity-10 genshin-spin-slow">
             <svg viewBox="0 0 100 100" class="w-full h-full"><circle cx="50" cy="50" r="48" fill="none" stroke="currentColor" stroke-width="2" class="text-amber-300"/><circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" stroke-width="1" class="text-amber-300"/></svg>
         </div>
         <div class="absolute bottom-12 left-20 w-10 h-10 opacity-8 genshin-spin-reverse">
             <svg viewBox="0 0 100 100" class="w-full h-full"><polygon points="50,5 95,95 5,95" fill="none" stroke="currentColor" stroke-width="2" class="text-orange-300"/></svg>
         </div>
-        <!-- 背景文字装饰 -->
-        <div class="absolute top-1/2 right-8 -translate-y-1/2 text-[140px] font-black text-white/[0.02] select-none pointer-events-none leading-none hidden lg:block">
-            提瓦特
-        </div>
+
+        <!-- 版本水印 -->
+        <div class="absolute top-1/2 right-6 -translate-y-1/2 text-[140px] font-black text-white/[0.02] select-none pointer-events-none leading-none hidden xl:block">6.7</div>
 
         <div class="relative z-10">
-            <!-- 标签 -->
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/15 border border-amber-500/25 text-xs text-amber-400 mb-4">
-                <i class="fa-solid fa-gamepad"></i>
-                HoYoverse / miHoYo
+            <!-- 版本标签 -->
+            <div class="flex flex-wrap items-center gap-3 mb-5">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/15 border border-amber-500/25 text-xs text-amber-400 font-medium">
+                    <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+                    月之七「空月之歌·行律」
+                </div>
+                <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-500/15 border border-orange-500/25 text-xs text-orange-400">
+                    <i class="fa-solid fa-gamepad text-[10px]"></i>
+                    HoYoverse
+                </div>
             </div>
 
-            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-3">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-3 leading-tight">
                 原神
-                <span class="block text-lg sm:text-xl font-normal text-white/40 mt-1">GENSHIN IMPACT</span>
+                <span class="block text-lg sm:text-xl font-normal text-white/35 mt-1.5">GENSHIN IMPACT</span>
             </h1>
 
             <p class="text-white/50 text-sm sm:text-base max-w-lg leading-relaxed mb-6">
-                开放世界ARPG，踏入提瓦特大陆的奇幻旅程。在七种元素的交织中探索未知，与伙伴一同书写属于你的冒险篇章。
+                开放世界ARPG，在提瓦特大陆的七元素交织中探索未知。新手入门、角色培养、配队策略与探索攻略一应俱全。
             </p>
 
             <!-- 统计 -->
-            <div class="flex flex-wrap gap-6 text-sm">
-                <div class="flex items-center gap-2">
+            <div class="flex flex-wrap items-center gap-6 text-sm">
+                <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/[0.03] border border-white/[0.06]">
                     <i class="fa-solid fa-file-lines text-amber-400"></i>
-                    <span class="text-white/50">30 篇攻略</span>
+                    <span class="text-white/60">30 篇攻略</span>
                 </div>
-                <div class="flex items-center gap-2">
+                <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/[0.03] border border-white/[0.06]">
                     <i class="fa-solid fa-clock text-amber-400"></i>
-                    <span class="text-white/50">持续更新中</span>
+                    <span class="text-white/60">持续更新</span>
+                </div>
+                <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/[0.03] border border-white/[0.06]">
+                    <i class="fa-solid fa-layer-group text-amber-400"></i>
+                    <span class="text-white/60">5 大分类</span>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
+<!-- 当前版本高亮 -->
+<section class="page-section max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <a href="#/guides/genshin/version/spiral-abyss-guide" class="glass-card glow-card group block rounded-2xl p-5 cursor-pointer bg-gradient-to-r from-[#1c1508] via-[#191206] to-[#1c1508] border border-amber-500/10">
+        <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+            <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 border border-amber-500/15">
+                <i class="fa-solid fa-star text-amber-400 text-lg"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-2 mb-1">
+                    <span class="px-2 py-0.5 text-[10px] rounded-full bg-amber-500/15 text-amber-400 font-medium">当前版本</span>
+                    <span class="text-xs text-white/25">月之七「空月之歌·行律」· 2026年6月</span>
+                </div>
+                <h3 class="text-base font-semibold text-white group-hover:text-amber-400 transition-colors">
+                    6.7版本深渊螺旋攻略 — 12层满星阵容推荐与打法详解
+                </h3>
+            </div>
+            <i class="fa-solid fa-chevron-right text-white/20 group-hover:text-amber-400 group-hover:translate-x-1 transition-all duration-200 hidden sm:block"></i>
+        </div>
+    </a>
+</section>
+
 <!-- 攻略分类 -->
-<section class="page-section max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <h2 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
-        <i class="fa-solid fa-compass text-amber-400"></i>攻略分类
-    </h2>
+<section class="page-section max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="flex items-center justify-between mb-6">
+        <h2 class="text-xl font-bold text-white flex items-center gap-2">
+            <i class="fa-solid fa-compass text-amber-400"></i>攻略分类
+        </h2>
+        <span class="text-xs text-white/25">共 5 大分类 · 30 篇攻略</span>
+    </div>
 
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
         <!-- 新手入门 (有内容) -->
@@ -127,10 +163,15 @@
 </section>
 
 <!-- 最新攻略文章列表 -->
-<section class="page-section max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pb-20">
-    <h2 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
-        <i class="fa-solid fa-clock-rotate-left text-amber-400"></i>最新攻略
-    </h2>
+<section class="page-section max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 pb-24">
+    <div class="flex items-center justify-between mb-6">
+        <h2 class="text-xl font-bold text-white flex items-center gap-2">
+            <i class="fa-solid fa-clock-rotate-left text-amber-400"></i>精选攻略
+        </h2>
+        <a href="#/guides/genshin/beginner" class="text-xs text-white/25 hover:text-amber-400 transition-colors">
+            查看全部 30 篇 <i class="fa-solid fa-arrow-right ml-1 text-[10px]"></i>
+        </a>
+    </div>
 
     <div class="space-y-4">
         <!-- 文章 #1: 新手入门全面指南 -->
