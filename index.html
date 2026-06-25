@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="个人博客 — 技术分享与思考">
-    <meta name="theme-color" content="#0a0a0f">
+    <meta name="theme-color" content="#121214">
 
     <!-- 主题初始化前闪烁防护 -->
     <script>
@@ -32,7 +32,7 @@
             theme: {
                 extend: {
                     colors: {
-                        dark: '#0a0a0f',
+                        dark: '#121214',
                     },
                     fontFamily: {
                         sans: ['"Inter"', 'system-ui', '-apple-system', '"Segoe UI"', 'sans-serif'],
@@ -67,18 +67,18 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body class="bg-[#0a0a0f] text-white font-sans antialiased min-h-screen flex flex-col overflow-x-hidden">
+<body class="bg-[#121214] text-white font-sans antialiased min-h-screen flex flex-col overflow-x-hidden">
 
     <!-- Particle background -->
     <canvas id="particle-canvas"></canvas>
 
     <!-- Loader -->
-    <div id="loader" class="fixed inset-0 z-[100] bg-[#0a0a0f] flex flex-col items-center justify-center gap-4 transition-opacity duration-500">
+    <div id="loader" class="fixed inset-0 z-[100] bg-[#121214] flex flex-col items-center justify-center gap-4 transition-opacity duration-500">
         <div class="relative w-12 h-12">
-            <div class="absolute inset-0 border-2 border-purple-500/20 rounded-full"></div>
-            <div class="absolute inset-0 border-2 border-t-purple-400 border-r-transparent border-b-transparent border-l-transparent rounded-full animate-spin"></div>
+            <div class="absolute inset-0 border-2 border-amber-500/15 rounded-full"></div>
+            <div class="absolute inset-0 border-2 border-t-amber-400 border-r-transparent border-b-transparent border-l-transparent rounded-full animate-spin"></div>
         </div>
-        <span class="text-white/30 text-xs tracking-[0.3em] uppercase">Loading</span>
+        <span class="text-amber-400/40 text-xs tracking-[0.3em] uppercase">Loading</span>
     </div>
 
     <!-- Navbar -->
@@ -95,7 +95,7 @@
            class="fixed top-16 left-0 z-40 w-72 h-[calc(100vh-4rem)] overflow-y-auto
                   transform -translate-x-full lg:translate-x-0
                   transition-transform duration-300 ease-in-out
-                  bg-[#0a0a0f]/95 backdrop-blur-md border-r border-white/[0.06]
+                  bg-[#121214]/95 backdrop-blur-md border-r border-white/[0.06]
                   [&::-webkit-scrollbar]:w-1">
     </aside>
 
