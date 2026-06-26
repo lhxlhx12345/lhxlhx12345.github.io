@@ -43,7 +43,7 @@ const App = (() => {
         setupNavScroll();
         setupMobileMenu();
         setupSidebarBackdrop();
-        setupThemeToggle();
+        // 主题切换已移除 — 站点固定深色
 
         // 监听 hash 变化
         window.addEventListener('hashchange', handleRoute);
@@ -347,65 +347,6 @@ const App = (() => {
             $sidebar.classList.remove('lg:translate-x-0');
             $sidebarBackdrop.classList.add('opacity-0', 'pointer-events-none');
         });
-    }
-
-    // =============================================================
-    // 三主题切换：dark → light → warm → dark (循环)
-    // =============================================================
-    const THEMES = ['dark', 'light', 'warm'];
-    const THEME_ICONS = {
-        dark: 'fa-moon',
-        light: 'fa-sun',
-        warm: 'fa-fire'
-    };
-    const THEME_LABELS = {
-        dark: '深色模式',
-        light: '浅色模式',
-        warm: '暖色模式'
-    };
-
-    function setupThemeToggle() {
-        // 读取保存的主题
-        const saved = localStorage.getItem('carblog-theme') || 'dark';
-        applyTheme(saved);
-
-        document.addEventListener('click', e => {
-            const btn = e.target.closest('#theme-toggle');
-            if (!btn) return;
-
-            const current = document.documentElement.getAttribute('data-theme') || 'dark';
-            const nextIndex = (THEMES.indexOf(current) + 1) % THEMES.length;
-            const nextTheme = THEMES[nextIndex];
-
-            applyTheme(nextTheme);
-            localStorage.setItem('carblog-theme', nextTheme);
-
-            // 粒子颜色适配
-            if (typeof Anim !== 'undefined' && typeof Anim.refreshParticles === 'function') {
-                Anim.refreshParticles(nextTheme);
-            }
-        });
-    }
-
-    function applyTheme(theme) {
-        document.documentElement.setAttribute('data-theme', theme);
-
-        // 更新主题按钮图标和标题
-        const btn = document.getElementById('theme-toggle');
-        if (btn) {
-            const icon = btn.querySelector('i');
-            if (icon) {
-                icon.className = 'fa-solid ' + THEME_ICONS[theme] + ' text-sm';
-            }
-            btn.title = THEME_LABELS[theme];
-        }
-
-        // 更新 meta theme-color
-        const meta = document.querySelector('meta[name="theme-color"]');
-        if (meta) {
-            const colors = { dark: '#121214', light: '#f8fafc', warm: '#fef7ed' };
-            meta.content = colors[theme];
-        }
     }
 
     // =============================================================
