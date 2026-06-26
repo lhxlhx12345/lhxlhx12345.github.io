@@ -240,11 +240,11 @@ const App = (() => {
     function highlightNav(routeId) {
         document.querySelectorAll('[data-nav-link]').forEach(link => {
             if (link.dataset.navLink === routeId) {
-                link.classList.add('text-purple-400');
+                link.classList.add('text-amber-400');
                 link.classList.remove('text-white/50');
             } else {
                 link.classList.add('text-white/50');
-                link.classList.remove('text-purple-400');
+                link.classList.remove('text-amber-400');
             }
         });
 
@@ -403,7 +403,7 @@ const App = (() => {
         // 更新 meta theme-color
         const meta = document.querySelector('meta[name="theme-color"]');
         if (meta) {
-            const colors = { dark: '#0a0a0f', light: '#f8fafc', warm: '#fef7ed' };
+            const colors = { dark: '#121214', light: '#f8fafc', warm: '#fef7ed' };
             meta.content = colors[theme];
         }
     }
